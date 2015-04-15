@@ -49,6 +49,9 @@ public class Quaternion {
         float y_ = w * r.GetY() + z * r.GetX() - x * r.GetZ();
         float z_ = w * r.GetZ() + x * r.GetY() - y * r.GetX();
 
+        if(w_ > Integer.MAX_VALUE){
+            System.out.println("ERROR");
+        }
         return new Quaternion(x_, y_, z_, w_);
     }
 

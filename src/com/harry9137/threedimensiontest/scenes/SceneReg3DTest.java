@@ -1,5 +1,6 @@
 package com.harry9137.threedimensiontest.scenes;
 
+import com.harry9137.threedimensiontest.main.Input;
 import com.harry9137.threedimensiontest.render.math.Vector2f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 import com.harry9137.threedimensiontest.render.*;
@@ -28,7 +29,7 @@ public class SceneReg3DTest extends SceneBase {
                 0,1,2,
                 0,2,3};
         mesh.addVertices(vertices, indices);
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(0,1,1)), this.getTransform(), new Vector3f(0,0,5)));
+        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(0,1,1)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0)));
     }
     float temp = 0.0F;
     @Override
@@ -37,12 +38,32 @@ public class SceneReg3DTest extends SceneBase {
 
         float sinTemp = (float)Math.sin(temp);
 
-       // this.getTransform().setRotation(0,sinTemp * 180,0);
+        this.getTransform().setRotation(22.5f,sinTemp * 180,0);
         //  transform.setScale(0.25F,0.25F,0.25F);
+
+
     }
     @Override
     public void input(){
         this.getCamera().input();
+
+        if(Input.getKeyDown(Input.KEY_NUMPAD9)){
+            this.getObjects().get(0).getLocation().SetX(this.getObjects().get(0).getLocation().GetX() + 0.1f);
+            System.out.println("9");
+        }
+        if(Input.getKeyDown(Input.KEY_NUMPAD7)){
+            this.getObjects().get(0).getLocation().SetX(this.getObjects().get(0).getLocation().GetX() - 0.1f);
+            System.out.println("7");
+        }
+
+        if(Input.getKeyDown(Input.KEY_0) && SceneLoader.getSelectedSceneNumber() == 0){
+            System.out.println("Attempting to Translate to Scene 2");
+            SceneLoader.selectScene(1);
+        }
+        else if(Input.getKeyDown(Input.KEY_0) && SceneLoader.getSelectedSceneNumber() == 1){
+            System.out.println("Attempting to Translate to Scene 1");
+            SceneLoader.selectScene(0);
+        }
     }
     @Override
     public void specialInit(){

@@ -96,6 +96,7 @@ public class Matrix4f {
         m[3][0] = 0;	        m[3][1] = 0;	        m[3][2] = 0;	        m[3][3] = 1;
 
         return this;
+
     }
 
     public Matrix4f mul(Matrix4f r){

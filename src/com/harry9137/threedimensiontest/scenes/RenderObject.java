@@ -9,11 +9,17 @@ public class RenderObject {
     private Material material;
     private Mesh mesh;
     private Transform transform;
+    private Vector3f velocity;
+    private Vector3f acceleration;
+    private Vector3f location;
 
-    public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location){
+    public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration){
         this.mesh = mesh;
         this.material = material;
+        this.velocity = velocity;
+        this.acceleration = acceleration;
         this.transform = transform.addTranslation(location);
+        this.location = location;
     }
 
     public Material getMaterial() {
@@ -38,5 +44,29 @@ public class RenderObject {
 
     public void setTransform(Transform transform) {
         this.transform = transform;
+    }
+
+    public Vector3f getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(Vector3f acceleration) {
+        this.acceleration = acceleration;
+    }
+
+    public Vector3f getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(Vector3f velocity) {
+        this.velocity = velocity;
+    }
+
+    public Vector3f getLocation() {
+        return location;
+    }
+
+    public void setLocation(Vector3f location) {
+        this.location = location;
     }
 }

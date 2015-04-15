@@ -12,11 +12,12 @@ import java.io.IOException;
 
 public class Launch {
 
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 600;
+    public static final int WIDTH = 1920;
+    public static final int HEIGHT = 1000;
     public static final String TITLE = "3DT";
-    public static final double FRAME_CAP = 5000.0;
+    public static final double FRAME_CAP = 60;
     public static String TEMP_DIRECTORY = null;
+    public static final double TPS = 60;
 
     private boolean isRunning;
     private Game game;
@@ -25,7 +26,7 @@ public class Launch {
         System.out.println(RenderUtil.getOpenGLVersion());
         RenderUtil.initGraphics();
         isRunning = false;
-        game = new Game();
+        game = Game.getInstance();
         EnvironmentVariables.update();
         TEMP_DIRECTORY = EnvironmentVariables.variables.get("TEMP") + "\\3DT";
         File tempFile = new File(TEMP_DIRECTORY);
@@ -91,6 +92,7 @@ public class Launch {
 
                 Time.setDelta(frameTime);
 
+                //Updates
                 game.input();
                 game.update();
 
@@ -101,8 +103,8 @@ public class Launch {
                     System.out.println(frames);
                     frames = 0;
                     frameCounter = 0;
-                    System.out.println(timeSecond);
-                    timeSecond = 0;
+                    System.out.println("TPS: " + Integer.toString(game.tps));
+                    game.setTps(0);
                 }
             }
             if(render) {
