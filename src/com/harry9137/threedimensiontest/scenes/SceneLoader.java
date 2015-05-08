@@ -2,6 +2,7 @@ package com.harry9137.threedimensiontest.scenes;
 
 import com.harry9137.threedimensiontest.main.Game;
 import com.harry9137.threedimensiontest.main.Launch;
+import com.harry9137.threedimensiontest.render.math.Matrix4f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 import com.harry9137.threedimensiontest.util.resources;
 
@@ -36,7 +37,7 @@ public class SceneLoader {
     public static void renderScene(){
         for(RenderObject object : selectedScene.getObjects()){
             selectedScene.getShader().bind();
-            selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(),object.getMaterial());
+            selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())),object.getMaterial());
             object.getMesh().draw();
         }
     }

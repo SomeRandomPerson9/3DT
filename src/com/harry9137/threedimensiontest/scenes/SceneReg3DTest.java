@@ -10,6 +10,7 @@ import com.harry9137.threedimensiontest.util.ResourceLoader;
 import com.harry9137.threedimensiontest.util.Time;
 
 public class SceneReg3DTest extends SceneBase {
+    boolean temp3;
     public SceneReg3DTest(){
         super();
         this.setShader(PhongShader.getInstance());
@@ -37,8 +38,10 @@ public class SceneReg3DTest extends SceneBase {
         temp += Time.getDelta();
 
         float sinTemp = (float)Math.sin(temp);
-
-        this.getTransform().setRotation(22.5f,sinTemp * 180,0);
+        if(temp3) {
+            this.getTransform().setRotation(22.5f, sinTemp * 180, 0);
+        }
+        this.getTransform().setTranslation(0f,1f,0f);
         //  transform.setScale(0.25F,0.25F,0.25F);
 
 
@@ -63,6 +66,9 @@ public class SceneReg3DTest extends SceneBase {
         else if(Input.getKeyDown(Input.KEY_0) && SceneLoader.getSelectedSceneNumber() == 1){
             System.out.println("Attempting to Translate to Scene 1");
             SceneLoader.selectScene(0);
+        }
+        if(Input.getKeyDown(Input.KEY_NUMLOCK)){
+            temp3 = !temp3;
         }
     }
     @Override
