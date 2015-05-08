@@ -47,7 +47,7 @@ public class PhongShader extends Shader {
         else
             RenderUtil.unbindTextures();
 
-        setUniform("transform", projectedMatrix);
+        setUniform("transform", projectedMatrix.mul(worldMatrix));
         setUniform("baseColor", material.getColor());
         setUniform("ambientLight", ambientLight);
 

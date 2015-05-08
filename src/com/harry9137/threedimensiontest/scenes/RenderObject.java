@@ -6,20 +6,23 @@ import com.harry9137.threedimensiontest.render.Transform;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 
 public class RenderObject {
+    private boolean phys;
     private Material material;
     private Mesh mesh;
     private Transform transform;
     private Vector3f velocity;
     private Vector3f acceleration;
     private Vector3f location;
+    private Vector3f camTransform;
 
-    public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration){
+    public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration, boolean phys){
         this.mesh = mesh;
         this.material = material;
         this.velocity = velocity;
         this.acceleration = acceleration;
         this.transform = transform.addTranslation(location);
         this.location = location;
+        this.phys = phys;
     }
 
     public Material getMaterial() {
@@ -68,5 +71,21 @@ public class RenderObject {
 
     public void setLocation(Vector3f location) {
         this.location = location;
+    }
+
+    public Vector3f getCamTransform() {
+        return camTransform;
+    }
+
+    public void setCamTransform(Vector3f camTransform) {
+        this.camTransform = camTransform;
+    }
+
+    public boolean isPhys() {
+        return phys;
+    }
+
+    public void setPhys(boolean noPhys) {
+        this.phys = noPhys;
     }
 }

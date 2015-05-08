@@ -43,7 +43,7 @@ public class Transform {
         Matrix4f cameraMatrix = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
         Matrix4f cameraTranslationMatrix = new Matrix4f().initTranslation(-camera.getPos().GetX(), -camera.getPos().GetY(), -camera.getPos().GetZ());
 
-        return projectionMatrix.mul(cameraMatrix.mul(cameraTranslationMatrix.mul(transformationMatrix)));
+        return projectionMatrix.mul(cameraMatrix.mul(cameraTranslationMatrix));
 
     }
     public Vector3f getTranslation() {

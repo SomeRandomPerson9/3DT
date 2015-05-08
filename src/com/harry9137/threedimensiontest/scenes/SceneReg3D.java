@@ -29,13 +29,13 @@ public class SceneReg3D extends SceneBase {
                 0,1,2,
                 0,2,3};
         mesh.addVertices(vertices, indices);
-        this.addObject(new RenderObject(mesh, new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(1,1,1)), this.getTransform(), new Vector3f(0,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0)));
+        this.addObject(new RenderObject(mesh, new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(1,1,1)), this.getTransform(), new Vector3f(0,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
         this.setBtsUpdateLvl(2);
     }
     @Override
     public void specialInit(){
         super.specialInit();
-        PhongShader.setAmbientLight(new Vector3f(0.1f,0.1f,0.1f));
+        PhongShader.setAmbientLight(new Vector3f(1f,1f,1f));
         PhongShader.setDirectionalLight(new DirectionalLight(new BaseLight(new Vector3f(1,1,1), 0.8f), new Vector3f(1,1,1)));
     }
     float temp = 0.0F;

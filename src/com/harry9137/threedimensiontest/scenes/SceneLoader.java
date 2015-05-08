@@ -36,43 +36,45 @@ public class SceneLoader {
     public static void renderScene(){
         for(RenderObject object : selectedScene.getObjects()){
             selectedScene.getShader().bind();
-            selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), selectedScene.getTransform().getProjectedTransformation(),object.getMaterial());
+            selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(),object.getMaterial());
             object.getMesh().draw();
         }
     }
     public static void calcPhysics(){
-        if(selectedScene != null) {
+        if(selectedScene != null && false) {
             for (RenderObject object : selectedScene.getObjects()) {
+                if(object.isPhys()) {
 
-                object.getTransform().addTranslation(object.getLocation());
+                    object.getTransform().addTranslation(object.getLocation());
 
-                int tps = Game.getInstance().getTps();
-                //Gravity
-                if (object.getVelocity().GetY() >= resources.terminalVelocity) {
-                    object.setAcceleration(new Vector3f((float) object.getAcceleration().GetX(), (float) (object.getAcceleration().GetY() - resources.gravity / tps), (float) object.getAcceleration().GetZ()));
-                }
+                    int tps = Game.getInstance().getTps();
+                    //Gravity
+                    if (object.getVelocity().GetY() >= resources.terminalVelocity) {
+                        object.setAcceleration(new Vector3f((float) object.getAcceleration().GetX(), (float) (object.getAcceleration().GetY() - resources.gravity / tps), (float) object.getAcceleration().GetZ()));
+                    }
 
-                //Acceleration to Velocity
-                if (object.getAcceleration().GetX() != 0) {
-                    object.getVelocity().SetX((float) (object.getAcceleration().GetX() / tps) + object.getVelocity().GetX());
-                }
-                if (object.getAcceleration().GetY() != 0) {
-                    object.getVelocity().SetY((float) (object.getAcceleration().GetY() * Launch.TPS / 100) + object.getVelocity().GetY());
-                }
-                if (object.getAcceleration().GetX() != 0) {
-                    object.getVelocity().SetZ((float) (object.getAcceleration().GetZ() * Launch.TPS / 100) + object.getVelocity().GetZ());
-                }
-                object.setAcceleration(new Vector3f(0, 0, 0));
+                    //Acceleration to Velocity
+                    if (object.getAcceleration().GetX() != 0) {
+                        object.getVelocity().SetX((float) (object.getAcceleration().GetX() / tps) + object.getVelocity().GetX());
+                    }
+                    if (object.getAcceleration().GetY() != 0) {
+                        object.getVelocity().SetY((float) (object.getAcceleration().GetY() * Launch.TPS / 100) + object.getVelocity().GetY());
+                    }
+                    if (object.getAcceleration().GetX() != 0) {
+                        object.getVelocity().SetZ((float) (object.getAcceleration().GetZ() * Launch.TPS / 100) + object.getVelocity().GetZ());
+                    }
+                    object.setAcceleration(new Vector3f(0, 0, 0));
 
-                //Velocity to Location
-                if (object.getAcceleration().GetX() != 0) {
-                    object.getLocation().SetX((float) (object.getAcceleration().GetX() / tps) + object.getVelocity().GetX());
-                }
-                if (object.getAcceleration().GetY() != 0) {
-                    object.getLocation().SetY((float) (object.getAcceleration().GetY() * Launch.TPS / 100) + object.getVelocity().GetY());
-                }
-                if (object.getAcceleration().GetX() != 0) {
-                    object.getLocation().SetZ((float) (object.getAcceleration().GetZ() * Launch.TPS / 100) + object.getVelocity().GetZ());
+                    //Velocity to Location
+                    if (object.getAcceleration().GetX() != 0) {
+                        object.getLocation().SetX((float) (object.getAcceleration().GetX() / tps) + object.getVelocity().GetX());
+                    }
+                    if (object.getAcceleration().GetY() != 0) {
+                        object.getLocation().SetY((float) (object.getAcceleration().GetY() * Launch.TPS / 100) + object.getVelocity().GetY());
+                    }
+                    if (object.getAcceleration().GetX() != 0) {
+                        object.getLocation().SetZ((float) (object.getAcceleration().GetZ() * Launch.TPS / 100) + object.getVelocity().GetZ());
+                    }
                 }
 
             }

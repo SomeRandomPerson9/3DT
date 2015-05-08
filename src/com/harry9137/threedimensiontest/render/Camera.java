@@ -77,7 +77,7 @@ public class Camera {
                 Vector2f deltaPos = Input.getMousePosition().Sub(centerPosition);
 
                 boolean rotY = deltaPos.GetX() != 0;
-                boolean rotX = deltaPos.GetY() != 0;
+                boolean rotX = deltaPos.GetY() != -180;
 
                 if(rotY)
                     rotateY(deltaPos.GetX() * sensitivity);

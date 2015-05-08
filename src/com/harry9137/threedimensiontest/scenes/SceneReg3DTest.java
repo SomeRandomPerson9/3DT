@@ -29,7 +29,7 @@ public class SceneReg3DTest extends SceneBase {
                 0,1,2,
                 0,2,3};
         mesh.addVertices(vertices, indices);
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(0,1,1)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0)));
+        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(1,0,0)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
     }
     float temp = 0.0F;
     @Override

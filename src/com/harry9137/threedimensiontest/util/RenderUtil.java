@@ -22,7 +22,7 @@ public class RenderUtil {
     }
 
     public static void initGraphics(){
-        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        glClearColor(0.9f, 0.9f, 0.9f, 0.9f);
 
         glFrontFace(GL_CW);
         glCullFace(GL_BACK);
@@ -40,7 +40,7 @@ public class RenderUtil {
     }
 
     public static void setClearColor(Vector3f color){
-        glClearColor(color.GetX(), color.GetY(),color.GetZ(), 1.0f);
+        glClearColor(0.3f,0.3f,1.0f, 1.0f);
     }
     public static void unbindTextures()
     {
