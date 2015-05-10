@@ -86,9 +86,9 @@ public class Matrix4f {
 
         Vector3f r = up;
         r.Normalized();
-        r = r.Cross(f);
+        r = r.cross(f);
 
-        Vector3f u = f.Cross(r);
+        Vector3f u = f.cross(r);
 
         m[0][0] = r.GetX();	    m[0][1] = r.GetY();	    m[0][2] = r.GetZ();	    m[0][3] = 0;
         m[1][0] = up.GetX();	m[1][1] = up.GetY();	m[1][2] = up.GetZ();	m[1][3] = 0;

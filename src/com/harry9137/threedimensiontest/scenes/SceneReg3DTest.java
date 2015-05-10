@@ -31,6 +31,8 @@ public class SceneReg3DTest extends SceneBase {
                 0,2,3};
         mesh.addVertices(vertices, indices);
         this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(1,0,0)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
+        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(0,1,0)), this.getTransform(), new Vector3f(5f,0,2), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
+        this.sceneType = SceneType.THREE_DIMENSIONAL;
     }
     float temp = 0.0F;
     @Override
@@ -39,9 +41,9 @@ public class SceneReg3DTest extends SceneBase {
 
         float sinTemp = (float)Math.sin(temp);
         if(temp3) {
-            this.getTransform().setRotation(22.5f, sinTemp * 180, 0);
+            this.getObjects().get(0).getTransform().setRotation(22.5f, sinTemp * 180, 0);
         }
-        this.getTransform().setTranslation(0f,1f,0f);
+        this.getObjects().get(0).getTransform().setTranslation(0f,1f,0f);
         //  transform.setScale(0.25F,0.25F,0.25F);
 
 
@@ -51,11 +53,11 @@ public class SceneReg3DTest extends SceneBase {
         this.getCamera().input();
 
         if(Input.getKeyDown(Input.KEY_NUMPAD9)){
-            this.getObjects().get(0).getLocation().SetX(this.getObjects().get(0).getLocation().GetX() + 0.1f);
+            this.getObjects().get(0).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() + 0.1f);
             System.out.println("9");
         }
         if(Input.getKeyDown(Input.KEY_NUMPAD7)){
-            this.getObjects().get(0).getLocation().SetX(this.getObjects().get(0).getLocation().GetX() - 0.1f);
+            this.getObjects().get(0).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() - 0.1f);
             System.out.println("7");
         }
 

@@ -60,7 +60,7 @@ public class Mesh {
            Vector3f v1 = vertexes[i1].getPos().Sub(vertexes[i0].getPos());
            Vector3f v2 = vertexes[i2].getPos().Sub(vertexes[i0].getPos());
 
-           Vector3f normal = v1.Cross(v2).Normalized();
+           Vector3f normal = v1.cross(v2).Normalized();
            vertexes[i0].setNormal(vertexes[i0].getNormal().Add(normal));
            vertexes[i1].setNormal(vertexes[i0].getNormal().Add(normal));
            vertexes[i2].setNormal(vertexes[i0].getNormal().Add(normal));

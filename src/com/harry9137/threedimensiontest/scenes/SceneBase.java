@@ -12,6 +12,7 @@ public class SceneBase {
     private Camera camera;
     private Transform transform;
     private int btsUpdateLvl = 0;
+    protected SceneType sceneType;
     public void update(){
 
     }

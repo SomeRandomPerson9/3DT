@@ -5,9 +5,12 @@ import com.harry9137.threedimensiontest.main.Launch;
 import com.harry9137.threedimensiontest.render.math.Matrix4f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 import com.harry9137.threedimensiontest.util.resources;
+import org.lwjgl.opengl.Display;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import org.lwjgl.opengl.GL11;
 
 public class SceneLoader {
     private static HashMap <Integer, SceneBase> scenes = new HashMap<>();
@@ -35,10 +38,17 @@ public class SceneLoader {
         }
     }
     public static void renderScene(){
-        for(RenderObject object : selectedScene.getObjects()){
-            selectedScene.getShader().bind();
-            selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())),object.getMaterial());
-            object.getMesh().draw();
+        if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
+            for (RenderObject object : selectedScene.getObjects()) {
+                selectedScene.getShader().bind();
+                selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
+                object.getMesh().draw();
+            }
+        }
+        else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){
+            if(selectedScene instanceof Scene2DVideo){
+                //GL11.glDrawElements(GL11.GL_POLYGON, 4);
+            }
         }
     }
     public static void calcPhysics(){

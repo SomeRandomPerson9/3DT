@@ -23,7 +23,8 @@ public class Vector3f {
         return m_x * r.GetX() + m_y * r.GetY() + m_z * r.GetZ();
     }
 
-    public Vector3f Cross(Vector3f r) {
+    public Vector3f cross(Vector3f r)
+    {
         float x_ = m_y * r.GetZ() - m_z * r.GetY();
         float y_ = m_z * r.GetX() - m_x * r.GetZ();
         float z_ = m_x * r.GetY() - m_y * r.GetX();
@@ -37,7 +38,8 @@ public class Vector3f {
         return new Vector3f(m_x / length, m_y / length, m_z / length);
     }
 
-    public Vector3f Rotate(Vector3f axis, float angle) {
+    public Vector3f Rotate(Vector3f axis, float angle)
+    {
         float sinHalfAngle = (float)Math.sin(Math.toRadians(angle / 2));
         float cosHalfAngle = (float)Math.cos(Math.toRadians(angle / 2));
 
@@ -51,11 +53,7 @@ public class Vector3f {
 
         Quaternion w = rotation.mul(this).mul(conjugate);
 
-        m_x = w.getX();
-        m_y = w.getY();
-        m_z = w.getZ();
-
-        return this;
+        return new Vector3f(w.getX(), w.getY(), w.getZ());
     }
 
     public Vector3f Lerp(Vector3f dest, float lerpFactor) {

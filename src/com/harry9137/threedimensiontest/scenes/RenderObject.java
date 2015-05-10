@@ -20,7 +20,7 @@ public class RenderObject {
         this.material = material;
         this.velocity = velocity;
         this.acceleration = acceleration;
-        this.transform = transform.addTranslation(location);
+        this.transform = transform.copy().addTranslation(location);
         this.location = location;
         this.phys = phys;
     }
