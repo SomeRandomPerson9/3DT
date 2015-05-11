@@ -45,7 +45,7 @@ public class Transform {
         return this;
     }
     public Transform addTranslation(Vector3f vec3){
-        setTranslationBase(getTranslation().GetX() + vec3.GetX(),getTranslation().GetY() + vec3.GetY(),getTranslation().GetZ() + vec3.GetZ());
+        setTranslationBase(getTranslation().GetX() + vec3.GetX(), getTranslation().GetY() + vec3.GetY(), getTranslation().GetZ() + vec3.GetZ());
         return this;
     }
     public Matrix4f getProjectedTransformation(Matrix4f locationTrans){
@@ -54,7 +54,16 @@ public class Transform {
         Matrix4f cameraMatrix = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
         Matrix4f cameraTranslationMatrix = new Matrix4f().initTranslation(-camera.getPos().GetX(), -camera.getPos().GetY(), -camera.getPos().GetZ());
 
-        return projectionMatrix.mul(cameraMatrix.mul(cameraTranslationMatrix.mul(transformationMatrix.mul(locationTrans))));
+        return projectionMatrix.mul(cameraMatrix.mul(cameraTranslationMatrix.mul(locationTrans.mul(transformationMatrix))));
+
+    }
+    public Matrix4f getProjectedTransformationHeld(Matrix4f locationTrans){
+        Matrix4f transformationMatrix = this.copy().getTransformation();
+        Matrix4f projectionMatrix = new Matrix4f().initProjection(fov,width,height,zNear,zFar);
+        Matrix4f cameraMatrix = new Matrix4f().initCamera(camera.getForward(), camera.getUp());
+        Matrix4f cameraTranslationMatrix = new Matrix4f().initTranslation(-camera.getPos().GetX(), -camera.getPos().GetY(), -camera.getPos().GetZ());
+
+        return projectionMatrix.mul(locationTrans.mul(transformationMatrix));
 
     }
     public Vector3f getTranslation() {

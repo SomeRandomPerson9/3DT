@@ -41,7 +41,12 @@ public class SceneLoader {
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
             for (RenderObject object : selectedScene.getObjects()) {
                 selectedScene.getShader().bind();
-                selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
+                if(object.isHeld()) {
+                    selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
+                }
+                else{
+                    selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
+                }
                 object.getMesh().draw();
             }
         }

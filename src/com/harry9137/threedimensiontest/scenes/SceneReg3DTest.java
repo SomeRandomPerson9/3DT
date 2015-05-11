@@ -42,6 +42,7 @@ public class SceneReg3DTest extends SceneBase {
         float sinTemp = (float)Math.sin(temp);
         if(temp3) {
             this.getObjects().get(0).getTransform().setRotation(22.5f, sinTemp * 180, 0);
+            this.getObjects().get(0).getTransform().setTranslation(0.0f,5.0f,0.0f);
         }
         this.getObjects().get(0).getTransform().setTranslation(0f,1f,0f);
         //  transform.setScale(0.25F,0.25F,0.25F);
@@ -53,11 +54,11 @@ public class SceneReg3DTest extends SceneBase {
         this.getCamera().input();
 
         if(Input.getKeyDown(Input.KEY_NUMPAD9)){
-            this.getObjects().get(0).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() + 0.1f);
+            this.getObjects().get(1).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() + 0.1f);
             System.out.println("9");
         }
         if(Input.getKeyDown(Input.KEY_NUMPAD7)){
-            this.getObjects().get(0).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() - 0.1f);
+            this.getObjects().get(1).getLocation().SetZ(this.getObjects().get(0).getLocation().GetX() - 0.1f);
             System.out.println("7");
         }
 
@@ -71,6 +72,10 @@ public class SceneReg3DTest extends SceneBase {
         }
         if(Input.getKeyDown(Input.KEY_NUMLOCK)){
             temp3 = !temp3;
+        }
+        if(Input.getKeyDown(Input.KEY_E)){
+            this.getObjects().get(1).getTransform().m;
+            this.getObjects().get(1).setHeld(!(this.getObjects().get(1).isHeld()));
         }
     }
     @Override
