@@ -75,7 +75,11 @@ public class SceneReg3DTest extends SceneBase {
             temp3 = !temp3;
         }
         if(Input.getKeyDown(Input.KEY_E)){
+<<<<<<< HEAD
            // this.getObjects().get(1).getTransform().m;
+=======
+            this.getObjects().get(1).getTransform().m;
+>>>>>>> origin/master
             this.getObjects().get(1).setHeld(!(this.getObjects().get(1).isHeld()));
         }
     }
