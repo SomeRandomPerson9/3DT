@@ -22,6 +22,9 @@ public class SceneBase {
     public void specialInit(){
 
     }
+    public void cleanup(){
+
+    }
 
     public ArrayList<RenderObject> getObjects() {
         return objects;

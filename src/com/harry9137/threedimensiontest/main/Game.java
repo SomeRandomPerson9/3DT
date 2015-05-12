@@ -1,10 +1,15 @@
 package com.harry9137.threedimensiontest.main;
 
 import com.harry9137.threedimensiontest.render.Transform;
+import com.harry9137.threedimensiontest.scenes.Scene2DVideo;
 import com.harry9137.threedimensiontest.scenes.SceneLoader;
 import com.harry9137.threedimensiontest.scenes.SceneReg3D;
 import com.harry9137.threedimensiontest.scenes.SceneReg3DTest;
 import com.harry9137.threedimensiontest.util.RenderUtil;
+import com.harry9137.threedimensiontest.util.Video;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Game {
     int tps = 0;
@@ -17,6 +22,12 @@ public class Game {
             instance = new Game();
             SceneLoader.addScene(0, new SceneReg3D());
             SceneLoader.addScene(1, new SceneReg3DTest());
+            try {
+                SceneLoader.addScene(2, new Scene2DVideo().setVideo(new Video(new File("F:\\Videos\\Final Exports\\Assasins Creed Unity Demo"))));
+            }
+            catch (IOException e){
+
+            }
             SceneLoader.selectScene(0);
         }
         return instance;
@@ -31,7 +42,14 @@ public class Game {
             System.out.println("Attempting to Translate to Scene 1");
             SceneLoader.selectScene(0);
         }
-    */}
+    */
+        if(Input.getKeyDown(Input.KEY_5)){
+            SceneLoader.selectScene(2);
+        }
+        if(Input.getKeyDown(Input.KEY_6)){
+            SceneLoader.selectScene(1);
+        }
+    }
     public void setTps(int num){
         tps = num;
     }
@@ -45,7 +63,7 @@ public class Game {
     }
     public void render(){
         if(SceneLoader.getSelectedScene() != null) {
-            RenderUtil.setClearColor(SceneLoader.getSelectedScene().getCamera().getPos().Div(2048f).Abs());
+            RenderUtil.setClearColor(null);
             SceneLoader.renderScene();
         }
     }

@@ -2,18 +2,22 @@ package com.harry9137.threedimensiontest.main;
 
 
 import com.harry9137.threedimensiontest.render.Window;
+import com.harry9137.threedimensiontest.scenes.Scene2DVideo;
 import com.harry9137.threedimensiontest.util.EnvironmentVariables;
 import com.harry9137.threedimensiontest.util.RenderUtil;
 import com.harry9137.threedimensiontest.util.ResourceLoader;
 import com.harry9137.threedimensiontest.util.Time;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.GL15;
+import org.lwjgl.opengl.GL20;
 
 import java.io.File;
 import java.io.IOException;
 
 public class Launch {
 
-    public static final int WIDTH = 1920;
-    public static final int HEIGHT = 1000;
+    public static final int WIDTH = 960;
+    public static final int HEIGHT = 540;
     public static final String TITLE = "3DT";
     public static final double FRAME_CAP = 60;
     public static String TEMP_DIRECTORY = null;

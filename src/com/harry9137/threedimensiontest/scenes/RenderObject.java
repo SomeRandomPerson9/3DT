@@ -14,6 +14,7 @@ public class RenderObject {
     private Vector3f acceleration;
     private Vector3f location;
     private Vector3f camTransform;
+    private boolean held;
 
     public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration, boolean phys){
         this.mesh = mesh;
@@ -87,5 +88,13 @@ public class RenderObject {
 
     public void setPhys(boolean noPhys) {
         this.phys = noPhys;
+    }
+
+    public boolean isHeld() {
+        return held;
+    }
+
+    public void setHeld(boolean held) {
+        this.held = held;
     }
 }

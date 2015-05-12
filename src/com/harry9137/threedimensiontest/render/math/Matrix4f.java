@@ -5,6 +5,9 @@ public class Matrix4f {
     public Matrix4f(){
         m = new float[4][4];
     }
+    private Matrix4f(float[][] m){
+        this.m = m;
+    }
 
     public Matrix4f initIdentity(){
         m[0][0] = 1;
@@ -114,6 +117,15 @@ public class Matrix4f {
         }
 
         return res;
+    }
+    public Matrix4f conjugate(){
+        float[][] res = new float[4][4];
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                res[i][j] = -(this.m[i][j]);
+            }
+        }
+        return new Matrix4f(res);
     }
 
     public float[][] getM() {

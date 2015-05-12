@@ -42,13 +42,18 @@ public class PhongShader extends Shader {
     }
 
     public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Material material) {
-        if (material.getTexture() != null)
+        if (material != null && material.getTexture() != null)
             material.getTexture().bind();
         else
             RenderUtil.unbindTextures();
 
         setUniform("transform", projectedMatrix.mul(worldMatrix));
-        setUniform("baseColor", material.getColor());
+        if(material != null) {
+            setUniform("baseColor", material.getColor());
+        }
+        else{
+            setUniform("baseColor", new Vector3f(0f,0f,0f));
+        }
         setUniform("ambientLight", ambientLight);
 
         setUniform("directionalLight", directionalLight);

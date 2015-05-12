@@ -20,6 +20,10 @@ public class SceneLoader {
         scenes.put(integer, scene);
     }
     public static void selectScene(Integer integer){
+        if(selectedScene != null) {
+            selectedScene.cleanup();
+            selectedScene.getShader().updateUniforms(new Matrix4f(),new Matrix4f(), null);
+        }
         selectedScene = scenes.get(integer);
         selectedSceneNumber = integer;
         selectedScene.specialInit();
@@ -39,15 +43,23 @@ public class SceneLoader {
     }
     public static void renderScene(){
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
-            for (RenderObject object : selectedScene.getObjects()) {
+            for (RenderObject renderObject : selectedScene.getObjects()) {
                 selectedScene.getShader().bind();
-                selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
-                object.getMesh().draw();
+                if(renderObject.isHeld()) {
+                    Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
+                    selectedScene.getShader().updateUniforms(renderObject.getTransform().getTransformation(), (Matrix4f)temp[0], renderObject.getMaterial());
+                    //renderObject.setLocation(((Matrix4f)temp[2]).get;
+                }
+                else{
+                    selectedScene.getShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial());
+                }
+                renderObject.getMesh().draw();
             }
         }
         else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){
             if(selectedScene instanceof Scene2DVideo){
-                //GL11.glDrawElements(GL11.GL_POLYGON, 4);
+
+                ((Scene2DVideo) selectedScene).render();
             }
         }
     }
