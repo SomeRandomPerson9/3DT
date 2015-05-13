@@ -45,7 +45,6 @@ public class SceneLoader {
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
             for (RenderObject renderObject : selectedScene.getObjects()) {
                 selectedScene.getShader().bind();
-<<<<<<< HEAD
                 if(renderObject.isHeld()) {
                     Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
                     selectedScene.getShader().updateUniforms(renderObject.getTransform().getTransformation(), (Matrix4f)temp[0], renderObject.getMaterial());
@@ -55,15 +54,6 @@ public class SceneLoader {
                     selectedScene.getShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial());
                 }
                 renderObject.getMesh().draw();
-=======
-                if(object.isHeld()) {
-                    selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
-                }
-                else{
-                    selectedScene.getShader().updateUniforms(object.getTransform().getTransformation(), object.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(object.getLocation().GetX(), object.getLocation().GetY(), object.getLocation().GetZ())), object.getMaterial());
-                }
-                object.getMesh().draw();
->>>>>>> origin/master
             }
         }
         else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){
