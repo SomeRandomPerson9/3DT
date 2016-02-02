@@ -3,6 +3,7 @@ package com.harry9137.threedimensiontest.scenes;
 import com.harry9137.threedimensiontest.render.Camera;
 import com.harry9137.threedimensiontest.render.Shader;
 import com.harry9137.threedimensiontest.render.Transform;
+import com.harry9137.threedimensiontest.render.Window;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,10 @@ public class SceneBase {
     }
     public void cleanup(){
 
+    }
+
+    public void restartMatrix(){
+        this.transform.setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 110f);
     }
 
     public ArrayList<RenderObject> getObjects() {
@@ -68,4 +73,6 @@ public class SceneBase {
     public void setBtsUpdateLvl(int btsUpdateLvl) {
         this.btsUpdateLvl = btsUpdateLvl;
     }
+
+
 }

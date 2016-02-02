@@ -1,5 +1,8 @@
 package com.harry9137.threedimensiontest.render;
 
+import com.harry9137.threedimensiontest.main.Game;
+import com.harry9137.threedimensiontest.main.Launch;
+import com.harry9137.threedimensiontest.util.resources;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -11,6 +14,7 @@ public class Window {
         Display.setTitle(title);
         try {
             Display.setDisplayMode(new DisplayMode(width, height));
+            Display.setResizable(true);
             Display.create();
             Keyboard.create();
             Mouse.create();
@@ -30,6 +34,9 @@ public class Window {
     public static boolean isCloseRequested(){
         return Display.isCloseRequested();
     }
+    public static boolean checkResize(){
+        return Display.wasResized();
+    }
     public static int getWidth(){
         return Display.getWidth();
     }
@@ -38,5 +45,8 @@ public class Window {
     }
     public static String getTitle(){
         return Display.getTitle();
+    }
+    public static void setDisplayMode(DisplayMode displayMode){
+
     }
 }

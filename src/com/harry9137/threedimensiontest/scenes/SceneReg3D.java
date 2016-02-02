@@ -15,6 +15,7 @@ public class SceneReg3D extends SceneBase {
         this.setShader(PhongShader.getInstance());
         this.setCamera(new Camera());
         Transform tempTransform = new Transform();
+        //TODO: DELETE MATRIX TO GET PERFORMANCE
         tempTransform.setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 110f);
         tempTransform.setCamera(this.getCamera());
         this.setTransform(tempTransform);

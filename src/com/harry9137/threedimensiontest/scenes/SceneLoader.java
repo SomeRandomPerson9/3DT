@@ -114,4 +114,8 @@ public class SceneLoader {
     public static SceneBase getSelectedScene(){
         return selectedScene;
     }
+    public static HashMap<Integer, SceneBase> getScenes() {
+        return scenes;
+    }
+
 }

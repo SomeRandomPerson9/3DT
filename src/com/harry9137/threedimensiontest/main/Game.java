@@ -1,19 +1,21 @@
 package com.harry9137.threedimensiontest.main;
 
 import com.harry9137.threedimensiontest.render.Transform;
-import com.harry9137.threedimensiontest.scenes.Scene2DVideo;
-import com.harry9137.threedimensiontest.scenes.SceneLoader;
-import com.harry9137.threedimensiontest.scenes.SceneReg3D;
-import com.harry9137.threedimensiontest.scenes.SceneReg3DTest;
+import com.harry9137.threedimensiontest.render.Window;
+import com.harry9137.threedimensiontest.scenes.*;
+import com.harry9137.threedimensiontest.util.Console;
 import com.harry9137.threedimensiontest.util.RenderUtil;
 import com.harry9137.threedimensiontest.util.Video;
+import org.lwjgl.opengl.DisplayMode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class Game {
     int tps = 0;
     private  static Game instance = null;
+    public static Console console;
     protected Game() {
 
     }
@@ -22,6 +24,8 @@ public class Game {
             instance = new Game();
             SceneLoader.addScene(0, new SceneReg3D());
             SceneLoader.addScene(1, new SceneReg3DTest());
+            console = new Console();
+            console.addText("Scenes Added to Loader!");
             try {
                 SceneLoader.addScene(2, new Scene2DVideo().setVideo(new Video(new File("F:\\Videos\\Final Exports\\Assasins Creed Unity Demo"))));
             }
@@ -57,6 +61,14 @@ public class Game {
         return tps;
     }
     public void update(){
+        if(Window.checkResize()){
+            console.addText("Change Resolution to " + Window.getWidth() + "," + Window.getHeight());
+            console.addText("Restarting Matrices");
+            Window.setDisplayMode(new DisplayMode(Window.getWidth(), Window.getHeight()));
+            for (int i = 0; i < SceneLoader.getScenes().size(); i++) {
+                SceneLoader.getScenes().get(i).restartMatrix();
+            }
+        }
         SceneLoader.updateScene();
         //SceneLoader.calcPhysics();
         tps++;
@@ -66,5 +78,8 @@ public class Game {
             RenderUtil.setClearColor(null);
             SceneLoader.renderScene();
         }
+    }
+    public void start(){
+
     }
 }

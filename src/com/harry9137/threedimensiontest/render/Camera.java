@@ -4,8 +4,6 @@ import com.harry9137.threedimensiontest.main.Input;
 import com.harry9137.threedimensiontest.util.Time;
 import com.harry9137.threedimensiontest.render.math.Vector2f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
-import com.harry9137.threedimensiontest.util.resources;
-import org.lwjgl.input.Keyboard;
 
 public class Camera
 {
@@ -28,11 +26,12 @@ public class Camera
     }
 
     boolean mouseLocked = false;
-    Vector2f centerPosition = new Vector2f(Window.getWidth()/2, Window.getHeight()/2);
+    public Vector2f centerPosition = new Vector2f(Window.getWidth()/2, Window.getHeight()/2);
 
     public void input()
     {
-        float sensitivity = 0.5f;
+        centerPosition = new Vector2f(Window.getWidth()/2, Window.getHeight()/2);
+        float sensitivity = 0.1f;
         float movAmt = (float)(10 * Time.getDelta());
 //		float rotAmt = (float)(100 * Time.getDelta());
 
