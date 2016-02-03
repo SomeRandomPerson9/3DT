@@ -62,6 +62,7 @@ public class Launch {
             return;
         }
         isRunning = false;
+        Game.console.windowClosed(null);
     }
 
     private void run(){

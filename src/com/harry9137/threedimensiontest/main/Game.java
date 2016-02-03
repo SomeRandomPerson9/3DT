@@ -53,6 +53,9 @@ public class Game {
         if(Input.getKeyDown(Input.KEY_6)){
             SceneLoader.selectScene(1);
         }
+        if(Input.getKeyDown(Input.KEY_0)){
+            SceneLoader.selectScene(3);
+        }
     }
     public void setTps(int num){
         tps = num;
@@ -64,7 +67,12 @@ public class Game {
         if(Window.checkResize()){
             console.addText("Change Resolution to " + Window.getWidth() + "," + Window.getHeight());
             console.addText("Restarting Matrices");
-            Window.setDisplayMode(new DisplayMode(Window.getWidth(), Window.getHeight()));
+            for(SceneBase sceneBase : SceneLoader.getScenes().values()) {
+                if(sceneBase != null && sceneBase.getCamera() != null && sceneBase.getCamera().centerPosition != null) {
+                    sceneBase.getCamera().centerPosition.SetX(Window.getWidth() / 2);
+                    sceneBase.getCamera().centerPosition.SetY(Window.getHeight() / 2);
+                }
+            }
             for (int i = 0; i < SceneLoader.getScenes().size(); i++) {
                 SceneLoader.getScenes().get(i).restartMatrix();
             }
