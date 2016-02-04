@@ -24,6 +24,7 @@ public class Game {
             instance = new Game();
             SceneLoader.addScene(0, new SceneReg3D());
             SceneLoader.addScene(1, new SceneReg3DTest());
+            SceneLoader.addScene(3, new SceneTestLevel());
             console = new Console();
             console.addText("Scenes Added to Loader!");
             try {

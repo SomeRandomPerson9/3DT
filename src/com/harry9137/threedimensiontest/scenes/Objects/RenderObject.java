@@ -1,4 +1,4 @@
-package com.harry9137.threedimensiontest.scenes;
+package com.harry9137.threedimensiontest.scenes.Objects;
 
 import com.harry9137.threedimensiontest.render.Material;
 import com.harry9137.threedimensiontest.render.Mesh;

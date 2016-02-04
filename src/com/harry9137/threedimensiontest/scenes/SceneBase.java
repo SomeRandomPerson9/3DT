@@ -4,11 +4,13 @@ import com.harry9137.threedimensiontest.render.Camera;
 import com.harry9137.threedimensiontest.render.Shader;
 import com.harry9137.threedimensiontest.render.Transform;
 import com.harry9137.threedimensiontest.render.Window;
+import com.harry9137.threedimensiontest.scenes.Objects.RenderObject;
 
 import java.util.ArrayList;
 
 public class SceneBase {
     private ArrayList<RenderObject> objects = new ArrayList<RenderObject>();
+    private ArrayList<RenderObject> overlayObjects = new ArrayList<RenderObject>();
     private Shader shader;
     private Camera camera;
     private Transform transform;
@@ -66,6 +68,10 @@ public class SceneBase {
         objects.add(object);
     }
 
+    public void addOverlay(RenderObject object){
+        overlayObjects.add(object);
+    }
+
     public int getBtsUpdateLvl() {
         return btsUpdateLvl;
     }
@@ -73,6 +79,23 @@ public class SceneBase {
     public void setBtsUpdateLvl(int btsUpdateLvl) {
         this.btsUpdateLvl = btsUpdateLvl;
     }
+
+    public SceneType getSceneType() {
+        return sceneType;
+    }
+
+    public void setSceneType(SceneType sceneType) {
+        this.sceneType = sceneType;
+    }
+
+    public ArrayList<RenderObject> getOverlayObjects() {
+        return overlayObjects;
+    }
+
+    public void setOverlayObjects(ArrayList<RenderObject> overlayObjects) {
+        this.overlayObjects = overlayObjects;
+    }
+
 
 
 }

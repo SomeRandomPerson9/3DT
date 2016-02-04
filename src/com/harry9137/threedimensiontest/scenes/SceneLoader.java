@@ -4,13 +4,10 @@ import com.harry9137.threedimensiontest.main.Game;
 import com.harry9137.threedimensiontest.main.Launch;
 import com.harry9137.threedimensiontest.render.math.Matrix4f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
+import com.harry9137.threedimensiontest.scenes.Objects.RenderObject;
 import com.harry9137.threedimensiontest.util.resources;
-import org.lwjgl.opengl.Display;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.lwjgl.opengl.GL11;
 
 public class SceneLoader {
     private static HashMap <Integer, SceneBase> scenes = new HashMap<>();

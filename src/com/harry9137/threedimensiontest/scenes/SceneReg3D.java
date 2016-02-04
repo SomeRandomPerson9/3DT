@@ -6,6 +6,7 @@ import com.harry9137.threedimensiontest.render.math.Vector3f;
 import com.harry9137.threedimensiontest.render.*;
 import com.harry9137.threedimensiontest.render.lighting.BaseLight;
 import com.harry9137.threedimensiontest.render.lighting.DirectionalLight;
+import com.harry9137.threedimensiontest.scenes.Objects.RenderObject;
 import com.harry9137.threedimensiontest.util.ResourceLoader;
 import com.harry9137.threedimensiontest.util.Time;
 
