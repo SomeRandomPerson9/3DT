@@ -5,7 +5,10 @@ import com.harry9137.threedimensiontest.render.Mesh;
 import com.harry9137.threedimensiontest.render.Transform;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 
-public class RenderObject {
+public class RenderObject extends GenericObject  {
+
+    String objName;
+
     private boolean phys;
     private Material material;
     private Mesh mesh;
@@ -96,5 +99,14 @@ public class RenderObject {
 
     public void setHeld(boolean held) {
         this.held = held;
+    }
+
+    public String getObjName() {
+        return objName;
+    }
+
+    public RenderObject setObjName(String objName) {
+        this.objName = objName;
+        return this;
     }
 }
