@@ -76,6 +76,8 @@ public class Launch {
         double unprocessedTime = 0;
         final double frameTime = 1.0 / FRAME_CAP;
 
+        game.start();
+
         game.console.addText("Starting Main Loop");
         while(isRunning){
             boolean render = false;

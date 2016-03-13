@@ -1,7 +1,7 @@
 package com.harry9137.threedimensiontest.scenes;
 
 import com.harry9137.threedimensiontest.render.Camera;
-import com.harry9137.threedimensiontest.render.Shader;
+import com.harry9137.threedimensiontest.render.shaders.Shader;
 import com.harry9137.threedimensiontest.render.Transform;
 import com.harry9137.threedimensiontest.render.Window;
 import com.harry9137.threedimensiontest.scenes.Objects.GenericObject;

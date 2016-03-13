@@ -1,5 +1,6 @@
-package com.harry9137.threedimensiontest.render;
+package com.harry9137.threedimensiontest.render.shaders;
 
+import com.harry9137.threedimensiontest.render.Material;
 import com.harry9137.threedimensiontest.render.math.Matrix4f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
 import com.harry9137.threedimensiontest.util.Util;

@@ -4,8 +4,11 @@ import com.harry9137.threedimensiontest.main.Game;
 import com.harry9137.threedimensiontest.main.Launch;
 import com.harry9137.threedimensiontest.render.math.Matrix4f;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
+import com.harry9137.threedimensiontest.scenes.Objects.GenericObject;
 import com.harry9137.threedimensiontest.scenes.Objects.RenderObject;
-import com.harry9137.threedimensiontest.util.resources;
+import com.harry9137.threedimensiontest.scenes.Objects.TextObject;
+import com.harry9137.threedimensiontest.util.ProgramRefrence;
+import org.newdawn.slick.Color;
 
 import java.util.HashMap;
 
@@ -52,6 +55,24 @@ public class SceneLoader {
                 }
                 renderObject.getMesh().draw();
             }
+            for(GenericObject genericObject : selectedScene.getOverlayObjects()){
+                if(genericObject instanceof TextObject){
+                    TextObject textObj = (TextObject)genericObject;
+                    try {
+                        ProgramRefrence.fonts.arialFont.drawString(textObj.getX(), textObj.getY(), textObj.getString(), Color.black);
+                    }catch(NullPointerException e){
+                        if(ProgramRefrence.fonts.arialFont == null){ 
+                            System.err.println("Global font is null");
+                        }
+                        //if(textObj.getFont() == null) {
+                        //    System.err.println("Text Object " + textObj.getObjName() + ": Font is Null");
+                        //}
+                        if(textObj.getString() == null){
+                            System.err.println("Text Object " + textObj.getObjName() + ": String is Null");
+                        }
+                    }
+                }
+            }
         }
         else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){
             if(selectedScene instanceof Scene2DVideo){
@@ -69,8 +90,8 @@ public class SceneLoader {
 
                     int tps = Game.getInstance().getTps();
                     //Gravity
-                    if (object.getVelocity().GetY() >= resources.terminalVelocity) {
-                        object.setAcceleration(new Vector3f((float) object.getAcceleration().GetX(), (float) (object.getAcceleration().GetY() - resources.gravity / tps), (float) object.getAcceleration().GetZ()));
+                    if (object.getVelocity().GetY() >= ProgramRefrence.terminalVelocity) {
+                        object.setAcceleration(new Vector3f((float) object.getAcceleration().GetX(), (float) (object.getAcceleration().GetY() - ProgramRefrence.gravity / tps), (float) object.getAcceleration().GetZ()));
                     }
 
                     //Acceleration to Velocity

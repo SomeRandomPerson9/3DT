@@ -3,7 +3,7 @@ package com.harry9137.threedimensiontest.scenes.Objects;
 import org.newdawn.slick.TrueTypeFont;
 
 public class TextObject extends GenericObject {
-    TrueTypeFont font;
+    private TrueTypeFont font;
     String string;
 
     String objName;
@@ -36,7 +36,8 @@ public class TextObject extends GenericObject {
         font = updatedFont;
     }
 
-    public TextObject(int updatedX, int updatedY){
+    public TextObject(TrueTypeFont updatedFont, int updatedX, int updatedY){
+        font = updatedFont;
         x = updatedX;
         y = updatedY;
     }

@@ -5,8 +5,10 @@ import com.harry9137.threedimensiontest.render.*;
 import com.harry9137.threedimensiontest.render.lighting.BaseLight;
 import com.harry9137.threedimensiontest.render.lighting.DirectionalLight;
 import com.harry9137.threedimensiontest.render.math.Vector3f;
-import com.harry9137.threedimensiontest.scenes.Objects.CounterObject;
+import com.harry9137.threedimensiontest.render.shaders.PhongShader;
 import com.harry9137.threedimensiontest.scenes.Objects.RenderObject;
+import com.harry9137.threedimensiontest.scenes.Objects.TextObject;
+import com.harry9137.threedimensiontest.util.ProgramRefrence;
 import com.harry9137.threedimensiontest.util.ResourceLoader;
 
 public class SceneTestLevel extends SceneBase {
@@ -19,7 +21,7 @@ public class SceneTestLevel extends SceneBase {
         this.getTransform().setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 110f);
         this.getTransform().setCamera(this.getCamera());
         this.addObject(new RenderObject(ResourceLoader.loadMesh("Floor.obj"), new Material(null, new Vector3f(2,2,2)), this.getTransform(), new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(0,0,0), true).setObjName("Floor"));
-        this.addOverlay(new CounterObject(0, 10, 10).setObjName("ColorCounter"));
+        this.addOverlay(new TextObject(ProgramRefrence.fonts.arialFont, Integer.toString(0), -100, -100).setObjName("ColorCounter"));
     }
 
     @Override
@@ -50,7 +52,7 @@ public class SceneTestLevel extends SceneBase {
         }
 
         if(didntExecute){
-            ((CounterObject)this.getOverlay("ColorCounter")).setString(this.getObject("Floor").getMaterial().getColor().GetX() + " " + this.getObject("Floor").getMaterial().getColor().GetY() + " " + this.getObject("Floor").getMaterial().getColor().GetZ());
+            ((TextObject)this.getOverlay("ColorCounter")).setString(this.getObject("Floor").getMaterial().getColor().GetX() + " " + this.getObject("Floor").getMaterial().getColor().GetY() + " " + this.getObject("Floor").getMaterial().getColor().GetZ());
         }
 
     }

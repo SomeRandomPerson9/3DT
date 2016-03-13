@@ -4,6 +4,7 @@ import com.harry9137.threedimensiontest.render.Transform;
 import com.harry9137.threedimensiontest.render.Window;
 import com.harry9137.threedimensiontest.scenes.*;
 import com.harry9137.threedimensiontest.util.Console;
+import com.harry9137.threedimensiontest.util.ProgramRefrence;
 import com.harry9137.threedimensiontest.util.RenderUtil;
 import com.harry9137.threedimensiontest.util.Video;
 import org.lwjgl.opengl.DisplayMode;
@@ -89,6 +90,6 @@ public class Game {
         }
     }
     public void start(){
-
+        ProgramRefrence.init();
     }
 }

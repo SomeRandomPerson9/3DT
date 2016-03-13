@@ -1,8 +1,5 @@
 package com.harry9137.threedimensiontest.render;
 
-import com.harry9137.threedimensiontest.main.Game;
-import com.harry9137.threedimensiontest.main.Launch;
-import com.harry9137.threedimensiontest.util.resources;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
