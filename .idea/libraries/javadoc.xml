@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/jbullet-20101010/jbullet-20101010/lib/jstackalloc/jstackalloc-20080716.zip!/jstackalloc-20080716/dist/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/jbullet-20101010/jbullet-20101010/lib/jstackalloc/jstackalloc-20080716.zip!/jstackalloc-20080716/src" />
+    </SOURCES>
+  </library>
+</component>

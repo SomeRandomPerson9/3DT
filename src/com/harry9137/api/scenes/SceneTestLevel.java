@@ -7,23 +7,28 @@ import com.harry9137.api.render.lighting.DirectionalLight;
 import com.harry9137.api.render.math.Vector3f;
 import com.harry9137.api.render.shaders.OverlayShader;
 import com.harry9137.api.render.shaders.PhongShader;
-import com.harry9137.api.scenes.Objects.RenderObject;
-import com.harry9137.api.scenes.Objects.TextObject;
+import com.harry9137.api.scenes.Objects.CharacterObject;
+import com.harry9137.api.scenes.Objects.GroundObject;
+import com.harry9137.api.scenes.Objects.logic.RenderObject;
+import com.harry9137.api.scenes.Objects.logic.RigidBodyBuilder;
+import com.harry9137.api.scenes.Objects.logic.TextObject;
 import com.harry9137.api.util.ProgramRefrence;
 import com.harry9137.api.util.ResourceLoader;
 
 public class SceneTestLevel extends SceneBase {
     public SceneTestLevel(){
         super();
+        this.setUpPhysics();
         this.sceneType = SceneType.THREE_DIMENSIONAL;
         this.setRegShader(PhongShader.getInstance());
         this.setOverlayShader(OverlayShader.getInstance());
         this.setCamera(new Camera());
+        this.getCamera().setPos(new Vector3f(0, 10f, -15f));
         this.setTransform(new Transform());
         this.getTransform().setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 110f);
         this.getTransform().setCamera(this.getCamera());
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("FloorTests.obj"), new Material(null, new Vector3f(1.19f,2,2)), this.getTransform(), new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(0,0,0), false).setObjName("Floor"));
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("Chara.obj"), new Material(null, new Vector3f(1,0,2)), this.getTransform(), new Vector3f(0,1,0), new Vector3f(0,0,0), new Vector3f(0,0,0), true).setObjName("Chara"));
+        this.addObject(new GroundObject(this.getTransform()));
+        this.addObject(new CharacterObject(this.getTransform()));
         this.getObject("Floor").getMesh().getVbo();
         this.addOverlay(new TextObject(ProgramRefrence.fonts.arialFont, Integer.toString(0), 0, 0).setObjName("ColorCounter"));
     }
@@ -31,7 +36,7 @@ public class SceneTestLevel extends SceneBase {
     @Override
     public void update(){
         //Vector2f pointInCircle = MathHelper.calcPosInCircle(new Vector2f(this.getObject("Chara").getLocation().));
-        float zPos = this.getObject("Chara").getLocation().GetZ();
+        //float zPos = this.getObject("Chara").getLocation().GetZ();
         //this.getCamera().setPos();
     }
 
@@ -66,18 +71,34 @@ public class SceneTestLevel extends SceneBase {
             System.out.println(this.getObject("Floor").getMaterial().getColor().GetX() + " " + this.getObject("Floor").getMaterial().getColor().GetY() + " " + this.getObject("Floor").getMaterial().getColor().GetZ());
         }
 
-        if(Input.getKey(Input.KEY_UP)){
-            this.getObject("Chara").getLocation().SetX(this.getObject("Chara").getLocation().GetX() + 0.2f);
+        com.bulletphysics.linearmath.Transform controlTransform = new com.bulletphysics.linearmath.Transform();
+
+        if(Input.getKey(Input.KEY_UP) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).x < 10f){
+            this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
+            javax.vecmath.Vector3f force = new javax.vecmath.Vector3f(50f, 0, 0);
+            this.getObject("Chara").getRigidBodyShape().activate(true);
+            this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
+
         }
-        else if(Input.getKey(Input.KEY_DOWN)){
-            this.getObject("Chara").getLocation().SetX(this.getObject("Chara").getLocation().GetX() - 0.2f);
+        else if(Input.getKey(Input.KEY_DOWN) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).x > -10f){
+            this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
+            javax.vecmath.Vector3f force = new javax.vecmath.Vector3f(-50f, 0, 0);
+            this.getObject("Chara").getRigidBodyShape().activate(true);
+            this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
-        if(Input.getKey(Input.KEY_LEFT)){
-            this.getObject("Chara").getLocation().SetZ(this.getObject("Chara").getLocation().GetZ() + 0.2f);
+        if(Input.getKey(Input.KEY_LEFT) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).z < 10f){
+            this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
+            javax.vecmath.Vector3f force = new javax.vecmath.Vector3f(0, 0, 50f);
+            this.getObject("Chara").getRigidBodyShape().activate(true);
+            this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
-        else if(Input.getKey(Input.KEY_RIGHT)){
-            this.getObject("Chara").getLocation().SetZ(this.getObject("Chara").getLocation().GetZ() - 0.2f);
+        else if(Input.getKey(Input.KEY_RIGHT) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).z > -10f){
+            this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
+            javax.vecmath.Vector3f force = new javax.vecmath.Vector3f(0f, 0, -50f);
+            this.getObject("Chara").getRigidBodyShape().activate(true);
+            this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
+        if(Input.get)
 
     }
     @Override

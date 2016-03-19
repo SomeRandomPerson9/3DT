@@ -7,7 +7,7 @@ import com.harry9137.api.render.*;
 import com.harry9137.api.render.lighting.BaseLight;
 import com.harry9137.api.render.lighting.DirectionalLight;
 import com.harry9137.api.render.shaders.PhongShader;
-import com.harry9137.api.scenes.Objects.RenderObject;
+import com.harry9137.api.scenes.Objects.logic.RenderObject;
 import com.harry9137.api.util.ResourceLoader;
 import com.harry9137.api.util.Time;
 

@@ -14,6 +14,7 @@ public class Game {
     int tps = 0;
     private  static Game instance = null;
     public static Console console;
+    public static boolean showBoundingBoxes = true;
     protected Game() {
 
     }
@@ -55,6 +56,10 @@ public class Game {
         if(Input.getKeyDown(Input.KEY_0)){
             SceneLoader.selectScene(3);
         }
+
+        if((Input.getKey(Input.KEY_F3) && Input.getKeyDown(Input.KEY_B)) || (Input.getKey(Input.KEY_B) && Input.getKeyDown(Input.KEY_F3))){
+            showBoundingBoxes = !showBoundingBoxes;
+        }
     }
     public void setTps(int num){
         tps = num;
@@ -77,7 +82,6 @@ public class Game {
             }
         }
         SceneLoader.updateScene();
-        SceneLoader.calcPhysics();
         tps++;
     }
     public void render(){

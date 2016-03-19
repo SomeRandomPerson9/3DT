@@ -9,6 +9,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="slick-util" level="project" />
     <orderEntry type="library" exported="" name="lwjgl" level="project" />
+    <orderEntry type="library" exported="" name="vecmath" level="project" />
+    <orderEntry type="library" exported="" name="swing-layout-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="javadoc" level="project" />
+    <orderEntry type="library" exported="" name="lwjgl_util" level="project" />
     <orderEntry type="library" name="jbullet" level="project" />
   </component>
 </module>

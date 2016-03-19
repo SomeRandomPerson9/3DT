@@ -16,4 +16,8 @@ public class MathHelper {
     public Vector3f calcRotPos(Vector3f origin, float sideAngle, float topAngle, float dist){
         return null;
     }
+
+    public static Vector3f vecMathToBaked3f(javax.vecmath.Vector3f vector3fOld){
+        return new Vector3f(vector3fOld.x, vector3fOld.y, vector3fOld.z);
+    }
 }

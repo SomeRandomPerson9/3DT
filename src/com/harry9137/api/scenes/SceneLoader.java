@@ -1,16 +1,19 @@
 package com.harry9137.api.scenes;
 
+import com.bulletphysics.linearmath.Transform;
 import com.harry9137.api.main.Game;
-import com.harry9137.api.main.Launch;
+import com.harry9137.api.physics.MathHelper;
 import com.harry9137.api.render.Material;
 import com.harry9137.api.render.math.Matrix4f;
 import com.harry9137.api.render.math.Vector3f;
-import com.harry9137.api.scenes.Objects.GenericObject;
-import com.harry9137.api.scenes.Objects.RenderObject;
-import com.harry9137.api.scenes.Objects.TextObject;
+import com.harry9137.api.scenes.Objects.logic.GenericObject;
+import com.harry9137.api.scenes.Objects.logic.RenderObject;
+import com.harry9137.api.scenes.Objects.logic.TextObject;
 import com.harry9137.api.util.ProgramRefrence;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.glu.GLU;
+import org.lwjgl.util.glu.Sphere;
 import org.newdawn.slick.Color;
-import com.bulletphysics.collision.*;
 
 import java.util.HashMap;
 
@@ -18,6 +21,8 @@ public class SceneLoader {
     private static HashMap <Integer, SceneBase> scenes = new HashMap<>();
     private static SceneBase selectedScene;
     private static int selectedSceneNumber;
+    private static Sphere sphere = new Sphere();
+
     public static void addScene(Integer integer, SceneBase scene){
         scenes.put(integer, scene);
     }
@@ -33,6 +38,16 @@ public class SceneLoader {
     public static void updateScene(){
         if(selectedScene != null) {
             selectedScene.update();
+            if(selectedScene.getDynamicsWorld() != null) {
+                //System.out.println("blah");
+                GL11.glLoadIdentity();
+                selectedScene.getDynamicsWorld().stepSimulation(1.0f / 60.0f);
+                for(RenderObject renderObject : selectedScene.getObjects()){
+                    renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin));
+                    System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
+                }
+
+            }
             for (int i = 0; i < scenes.size(); i++) {
                 if (scenes.get(i).getBtsUpdateLvl() > 0) {
                     scenes.get(i).update();
@@ -46,24 +61,37 @@ public class SceneLoader {
     public static void renderScene(){
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
             for (RenderObject renderObject : selectedScene.getObjects()) {
+                GL11.glPushMatrix();
                 selectedScene.getRegShader().bind();
                 if(renderObject.isHeld()) {
-                    Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
-                    selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), (Matrix4f)temp[0], renderObject.getMaterial());
-                    //renderObject.setLocation(((Matrix4f)temp[2]).get;
+                        Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
+                        selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), (Matrix4f) temp[0], renderObject.getMaterial());
+                        //renderObject.setLocation(((Matrix4f)temp[2]).get;
                 }
                 else{
                     selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial());
                 }
                 renderObject.getMesh().draw();
+                GL11.glPopMatrix();
+                if(Game.showBoundingBoxes && selectedScene.getDynamicsWorld() != null){
+                    GL11.glPushMatrix();
+                    javax.vecmath.Vector3f position = renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin;
+                    sphere.setDrawStyle(GLU.GLU_SILHOUETTE);
+                    GL11.glTranslatef(position.x, position.y, position.z);
+                    GL11.glColor4f(0, 1, 0, 1);
+                    sphere.draw(renderObject.getRigidBodyShape().getCollisionShape().getAngularMotionDisc(), 30, 30);
+                    GL11.glPopMatrix();
+                }
             }
             for(GenericObject genericObject : selectedScene.getOverlayObjects()){
                 if(genericObject instanceof TextObject){
                     TextObject textObj = (TextObject)genericObject;
                     try {
+                        GL11.glPushMatrix();
                         selectedScene.getOverlayShader().bind();
                         selectedScene.getOverlayShader().updateUniforms(null, null, new Material(null, new Vector3f(0,0,0)));
                         ProgramRefrence.fonts.arialFont.drawString(textObj.getX(), textObj.getY(), textObj.getString(), Color.black);
+                        GL11.glPopMatrix();
                     }catch(NullPointerException e){
                         if(ProgramRefrence.fonts.arialFont == null){ 
                             System.err.println("Global font is null");
@@ -85,7 +113,7 @@ public class SceneLoader {
             }
         }
     }
-    public static void calcPhysics(){
+    /* public static void calcPhysics(){
         if(selectedScene != null) {
             for (RenderObject object : selectedScene.getObjects()) {
                 if(object.isPhys()) {
@@ -126,7 +154,7 @@ public class SceneLoader {
 
             }
         }
-    }
+    }   */
     public static void updateSceneInput(){
         if(selectedScene != null) {
             selectedScene.input();

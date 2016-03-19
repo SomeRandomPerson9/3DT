@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jbullet">
+  <library name="lwjgl_util">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/jbullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl/jar/lwjgl_util.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

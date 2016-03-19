@@ -1,5 +1,7 @@
-package com.harry9137.api.scenes.Objects;
+package com.harry9137.api.scenes.Objects.logic;
 
+import com.bulletphysics.collision.shapes.CollisionShape;
+import com.bulletphysics.dynamics.RigidBody;
 import com.harry9137.api.render.Material;
 import com.harry9137.api.render.Mesh;
 import com.harry9137.api.render.Transform;
@@ -9,7 +11,13 @@ public class RenderObject extends GenericObject  {
 
     String objName;
 
+    boolean rigidBody;
+
     private boolean phys;
+
+    private CollisionShape collisionShape;
+    private RigidBody rigidBodyShape;
+
     private Material material;
     private Mesh mesh;
     private Transform transform;
@@ -27,6 +35,13 @@ public class RenderObject extends GenericObject  {
         this.transform = transform.copy().addTranslation(location);
         this.location = location;
         this.phys = phys;
+    }
+
+    public RenderObject(Mesh mesh1, RigidBody body){
+        this.mesh = mesh1;
+        this.rigidBodyShape = body;
+        this.setRigidBody(true);
+        //this.collisionShape = body.getCollisionShape();
     }
 
     public Material getMaterial() {
@@ -108,5 +123,21 @@ public class RenderObject extends GenericObject  {
     public RenderObject setObjName(String objName) {
         this.objName = objName;
         return this;
+    }
+
+    public boolean isRigidBody() {
+        return rigidBody;
+    }
+
+    public void setRigidBody(boolean rigidBody) {
+        this.rigidBody = rigidBody;
+    }
+
+    public RigidBody getRigidBodyShape() {
+        return rigidBodyShape;
+    }
+
+    public void setRigidBodyShape(RigidBody rigidBodyShape) {
+        this.rigidBodyShape = rigidBodyShape;
     }
 }

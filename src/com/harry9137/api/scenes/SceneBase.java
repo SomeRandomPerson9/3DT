@@ -1,12 +1,23 @@
 package com.harry9137.api.scenes;
 
+import com.bulletphysics.collision.broadphase.BroadphaseInterface;
+import com.bulletphysics.collision.broadphase.DbvtBroadphase;
+import com.bulletphysics.collision.dispatch.CollisionConfiguration;
+import com.bulletphysics.collision.dispatch.CollisionDispatcher;
+import com.bulletphysics.collision.dispatch.DefaultCollisionConfiguration;
+import com.bulletphysics.dynamics.DiscreteDynamicsWorld;
+import com.bulletphysics.dynamics.DynamicsWorld;
+import com.bulletphysics.dynamics.constraintsolver.ConstraintSolver;
+import com.bulletphysics.dynamics.constraintsolver.SequentialImpulseConstraintSolver;
+import com.harry9137.api.physics.EulerCamera;
 import com.harry9137.api.render.Camera;
 import com.harry9137.api.render.shaders.Shader;
 import com.harry9137.api.render.Transform;
 import com.harry9137.api.render.Window;
-import com.harry9137.api.scenes.Objects.GenericObject;
-import com.harry9137.api.scenes.Objects.RenderObject;
+import com.harry9137.api.scenes.Objects.logic.GenericObject;
+import com.harry9137.api.scenes.Objects.logic.RenderObject;
 
+import javax.vecmath.Vector3f;
 import java.util.ArrayList;
 
 public class SceneBase {
@@ -20,6 +31,34 @@ public class SceneBase {
     private Transform transform;
     private int btsUpdateLvl = 0;
     protected SceneType sceneType;
+
+    // TEST
+    private EulerCamera eulerCamera = new EulerCamera.Builder()
+            .setFieldOfView(300)
+            .setNearClippingPane(0.3f)
+            .setFarClippingPane(500)
+            .setPosition(0, 25, 15)
+            .build();
+
+    private DynamicsWorld dynamicsWorld;
+
+    public void setUpPhysics(){
+        BroadphaseInterface broadphase = new DbvtBroadphase();
+        CollisionConfiguration collisionConfiguration = new DefaultCollisionConfiguration();
+        CollisionDispatcher dispatcher = new CollisionDispatcher(collisionConfiguration);
+        ConstraintSolver solver = new SequentialImpulseConstraintSolver();
+        dynamicsWorld = new DiscreteDynamicsWorld(dispatcher, broadphase, solver, collisionConfiguration);
+        dynamicsWorld.setGravity(new Vector3f(0, -15 /* m/s2 */, 0));
+    }
+
+    public void addObject(RenderObject object){
+        objects.add(object);
+        if(object.isRigidBody()){
+            System.out.println("OYYY M888!!!");
+            dynamicsWorld.addRigidBody(object.getRigidBodyShape());
+        }
+    }
+
     public void update(){
 
     }
@@ -75,10 +114,6 @@ public class SceneBase {
 
     public void setTransform(Transform transform) {
         this.transform = transform;
-    }
-
-    public void addObject(RenderObject object){
-        objects.add(object);
     }
 
     public RenderObject getObject(int num){
@@ -144,5 +179,11 @@ public class SceneBase {
         return this;
     }
 
+    public DynamicsWorld getDynamicsWorld() {
+        return dynamicsWorld;
+    }
 
+    public void setDynamicsWorld(DynamicsWorld dynamicsWorld) {
+        this.dynamicsWorld = dynamicsWorld;
+    }
 }
