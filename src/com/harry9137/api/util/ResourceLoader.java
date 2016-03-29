@@ -1,6 +1,7 @@
 package com.harry9137.api.util;
 
 import com.harry9137.api.main.Launch;
+import com.harry9137.api.render.Mesh2D;
 import com.harry9137.api.render.math.Vector3f;
 import com.harry9137.api.render.Mesh;
 import com.harry9137.api.render.Texture;
@@ -212,5 +213,25 @@ public class ResourceLoader {
             }
         }
         return res;
+    }
+
+    public static Mesh2D loadMesh2D(String fileName){
+        String[] splitArray = fileName.split("\\.");
+        String ext = splitArray[splitArray.length-1];
+
+        org.newdawn.slick.opengl.Texture texture = null;
+        int texID = 0;
+
+        try{
+            texture = TextureLoader.getTexture(ext, new FileInputStream(new File("./res/textures/" + fileName)));
+            texID = texture.getTextureID();
+
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        return new Mesh2D(texID, texture.getTextureWidth(), texture.getTextureHeight());
+
     }
 }

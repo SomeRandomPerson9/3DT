@@ -8,6 +8,7 @@ import com.harry9137.api.render.math.Vector3f;
 import com.harry9137.api.render.shaders.OverlayShader;
 import com.harry9137.api.render.shaders.PhongShader;
 import com.harry9137.api.scenes.Objects.CharacterObject;
+import com.harry9137.api.scenes.Objects.ChoiceMenuObject;
 import com.harry9137.api.scenes.Objects.GroundObject;
 import com.harry9137.api.scenes.Objects.logic.RenderObject;
 import com.harry9137.api.scenes.Objects.logic.RigidBodyBuilder;
@@ -31,6 +32,7 @@ public class SceneTestLevel extends SceneBase {
         this.addObject(new CharacterObject(this.getTransform()));
         this.getObject("Floor").getMesh().getVbo();
         this.addOverlay(new TextObject(ProgramRefrence.fonts.arialFont, Integer.toString(0), 0, 0).setObjName("ColorCounter"));
+        this.addOverlay(new ChoiceMenuObject());
     }
 
     @Override
@@ -98,7 +100,7 @@ public class SceneTestLevel extends SceneBase {
             this.getObject("Chara").getRigidBodyShape().activate(true);
             this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
-        if(Input.get)
+       // if(Input.get)
 
     }
     @Override
