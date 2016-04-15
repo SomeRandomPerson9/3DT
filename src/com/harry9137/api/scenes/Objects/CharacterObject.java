@@ -1,6 +1,5 @@
 package com.harry9137.api.scenes.Objects;
 
-import com.bulletphysics.collision.shapes.BoxShape;
 import com.bulletphysics.collision.shapes.CollisionShape;
 import com.bulletphysics.collision.shapes.SphereShape;
 import com.bulletphysics.dynamics.RigidBody;
@@ -24,7 +23,7 @@ public class CharacterObject extends RenderObject {
     public CharacterObject(com.harry9137.api.render.Transform sceneTransform) {
         super(ResourceLoader.loadMesh("Chara.obj"), new Material(null, new com.harry9137.api.render.math.Vector3f(1,0,2)), sceneTransform, new com.harry9137.api.render.math.Vector3f(0,1,0), new com.harry9137.api.render.math.Vector3f(0,0,0), new com.harry9137.api.render.math.Vector3f(0,0,0), true);
 
-        CollisionShape ballShape = new BoxShape(new Vector3f(2.0f, 2.0f, 2.0f));
+        CollisionShape ballShape = new SphereShape(1.0f);
         MotionState ballMotionState = new DefaultMotionState(DEFAULT_BALL_TRANSFORM);
         Vector3f ballInertia = new Vector3f(0, 0, 0);
         ballShape.calculateLocalInertia(2.5f, ballInertia);

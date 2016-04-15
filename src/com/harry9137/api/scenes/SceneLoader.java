@@ -6,7 +6,6 @@ import com.harry9137.api.physics.MathHelper;
 import com.harry9137.api.render.Material;
 import com.harry9137.api.render.math.Matrix4f;
 import com.harry9137.api.render.math.Vector3f;
-import com.harry9137.api.scenes.Objects.ChoiceMenuObject;
 import com.harry9137.api.scenes.Objects.logic.GenericObject;
 import com.harry9137.api.scenes.Objects.logic.RenderObject;
 import com.harry9137.api.scenes.Objects.logic.TextObject;
@@ -50,13 +49,11 @@ public class SceneLoader {
 
             }
             for (int i = 0; i < scenes.size(); i++) {
-                if (scenes.get(i) != null) {
-                    if (scenes.get(i).getBtsUpdateLvl() > 0) {
-                        scenes.get(i).update();
-                    }
-                    if (selectedSceneNumber == i) {
-                        selectedScene.update();
-                    }
+                if (scenes.get(i).getBtsUpdateLvl() > 0) {
+                    scenes.get(i).update();
+                }
+                if (selectedSceneNumber == i) {
+                    selectedScene.update();
                 }
             }
         }
@@ -105,16 +102,6 @@ public class SceneLoader {
                         if(textObj.getString() == null){
                             System.err.println("Text Object " + textObj.getObjName() + ": String is Null");
                         }
-                    }
-                }
-                else if(genericObject instanceof ChoiceMenuObject){
-                    ChoiceMenuObject choiceMenuObject = (ChoiceMenuObject)genericObject;
-
-                    try{
-                        choiceMenuObject.mesh.draw(choiceMenuObject.xPos, choiceMenuObject.yPos);
-                    }
-                    catch(Exception e){
-
                     }
                 }
             }

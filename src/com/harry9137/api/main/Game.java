@@ -78,12 +78,7 @@ public class Game {
                 }
             }
             for (int i = 0; i < SceneLoader.getScenes().size(); i++) {
-                try {
-                    SceneLoader.getScenes().get(i).restartMatrix();
-                }
-                catch(NullPointerException e){
-                    System.out.println("Scene Doesnt Exist");
-                }
+                SceneLoader.getScenes().get(i).restartMatrix();
             }
         }
         SceneLoader.updateScene();

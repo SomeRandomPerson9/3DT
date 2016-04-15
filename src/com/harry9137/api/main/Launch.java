@@ -9,8 +9,8 @@ import java.io.IOException;
 
 public class Launch {
 
-    public static final int WIDTH = 1200;
-    public static final int HEIGHT = 700;
+    public static final int WIDTH = 1920;
+    public static final int HEIGHT = 1017;
     public static final String TITLE = "3DT";
     public static final double FRAME_CAP = 60;
     public static String TEMP_DIRECTORY = null;
