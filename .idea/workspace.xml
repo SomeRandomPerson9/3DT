@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7cad1c24-42f4-4dbb-9464-341bb161853e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/main/Game.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/main/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/main/Launch.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/main/Launch.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/physics/MathHelper.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/physics/MathHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/render/Texture.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/render/Texture.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/render/shaders/PhongShader.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/render/shaders/PhongShader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/Objects/CharacterObject.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/Objects/CharacterObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/Objects/logic/RenderObject.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/Objects/logic/RenderObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/SceneLoader.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/SceneLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/SceneTestLevel.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/scenes/SceneTestLevel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/util/ResourceLoader.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/util/ResourceLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/util/Util.class" afterPath="$PROJECT_DIR$/out/production/3DT/com/harry9137/api/util/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/Chara.mtl" afterPath="$PROJECT_DIR$/res/models/Chara.mtl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/Chara.obj" afterPath="$PROJECT_DIR$/res/models/Chara.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/Floor.mtl" afterPath="$PROJECT_DIR$/res/models/Floor.mtl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/FloorRects.obj" afterPath="$PROJECT_DIR$/res/models/FloorRects.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/FloorTests.mtl" afterPath="$PROJECT_DIR$/res/models/FloorTests.mtl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/models/FloorTests.obj" afterPath="$PROJECT_DIR$/res/models/FloorTests.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/main/Game.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/main/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/main/Launch.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/main/Launch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/physics/MathHelper.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/physics/MathHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/render/Texture.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/render/Texture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/render/shaders/PhongShader.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/render/shaders/PhongShader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/CharacterObject.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/CharacterObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/RenderObject.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/RenderObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneTestLevel.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneTestLevel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/util/ResourceLoader.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/util/ResourceLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/harry9137/api/util/Util.java" afterPath="$PROJECT_DIR$/src/com/harry9137/api/util/Util.java" />
-    </list>
+    <list default="true" id="7cad1c24-42f4-4dbb-9464-341bb161853e" name="Default" comment="" />
     <ignored path="3DT.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -55,8 +25,8 @@
       <file leaf-file-name="SceneTestLevel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneTestLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+            <state relative-caret-position="663">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,9 +37,60 @@
       <file leaf-file-name="RenderObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/RenderObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="1428">
+              <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+              <folding>
+                <element signature="e#3392#3393#0" expanded="false" />
+                <element signature="e#3444#3445#0" expanded="false" />
+                <marker date="1461063071949" expanded="false" signature="56:321" placeholder="..." />
+                <marker date="1461063071949" expanded="true" signature="924:1195" placeholder="{...}" />
+                <marker date="1461063071949" expanded="true" signature="1248:1409" placeholder="{...}" />
+                <marker date="1461063071949" expanded="false" signature="1550:1561" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1577:1583" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="1631:1642" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1667:1673" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="1700:1711" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1723:1729" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="1765:1776" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1793:1799" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="1836:1847" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1864:1870" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="1921:1932" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="1959:1965" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2004:2015" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2035:2041" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2097:2108" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2141:2147" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2182:2193" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2209:2215" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2263:2274" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2299:2305" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2340:2351" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2367:2373" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2421:2432" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2457:2463" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2502:2513" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2533:2539" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2595:2606" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2639:2645" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2674:2685" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2697:2703" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2744:2755" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2774:2780" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2809:2820" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2832:2838" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2877:2888" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2905:2911" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="2943:2954" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="2969:2975" placeholder=" }" />
+                <marker date="1461063071949" expanded="true" signature="3028:3088" placeholder="{...}" />
+                <marker date="1461063071949" expanded="false" signature="3122:3133" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="3150:3156" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="3205:3216" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="3243:3249" placeholder=" }" />
+                <marker date="1461063071949" expanded="false" signature="3291:3302" placeholder=" { " />
+                <marker date="1461063071949" expanded="false" signature="3324:3330" placeholder=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,7 +98,7 @@
       <file leaf-file-name="SceneBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="595">
               <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
               <folding />
             </state>
@@ -87,7 +108,7 @@
       <file leaf-file-name="BasicShader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/BasicShader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="238">
               <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
@@ -97,17 +118,9 @@
       <file leaf-file-name="SceneLoader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48190477">
-              <caret line="76" column="94" selection-start-line="76" selection-start-column="94" selection-end-line="76" selection-end-column="94" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9498#9499#0" expanded="true" />
-                <element signature="e#9540#9541#0" expanded="true" />
-                <element signature="e#9588#9589#0" expanded="true" />
-                <element signature="e#9624#9625#0" expanded="true" />
-                <element signature="e#9684#9685#0" expanded="true" />
-                <element signature="e#9713#9714#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="84" column="48" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +128,7 @@
       <file leaf-file-name="RenderUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/RenderUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="629">
               <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
               <folding>
                 <element signature="e#1080#1081#0" expanded="true" />
@@ -128,8 +141,8 @@
       <file leaf-file-name="ResourceLoader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/ResourceLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="251" column="84" selection-start-line="251" selection-start-column="84" selection-end-line="251" selection-end-column="84" />
+            <state relative-caret-position="3791">
+              <caret line="346" column="0" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,7 +151,7 @@
       <file leaf-file-name="Shader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/Shader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state relative-caret-position="595">
               <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
               <folding>
                 <element signature="e#1462#1463#0" expanded="true" />
@@ -151,8 +164,8 @@
       <file leaf-file-name="MathHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/MathHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="70" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+            <state relative-caret-position="340">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,8 +174,8 @@
       <file leaf-file-name="PhongShader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/PhongShader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+            <state relative-caret-position="816">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -239,8 +252,8 @@
         <option value="$PROJECT_DIR$/src/com/harry9137/api/physics/MathHelper.java" />
         <option value="$PROJECT_DIR$/src/com/harry9137/api/render/shaders/PhongShader.java" />
         <option value="$PROJECT_DIR$/src/com/harry9137/api/util/ResourceLoader.java" />
-        <option value="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java" />
         <option value="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneTestLevel.java" />
+        <option value="$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java" />
       </list>
     </option>
   </component>
@@ -254,8 +267,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -320,7 +333,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -339,7 +351,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -604,6 +616,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,31 +658,21 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -679,27 +682,15 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -885,7 +876,7 @@
     <configuration default="false" name="Default" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.harry9137.api.main.Launch" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;F:\Java Workspace\3DT\lib\lwjgl\native\windows&quot; -Xmx20148m" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;.\lib\lwjgl\native\windows&quot; -Xmx20148m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -929,7 +920,9 @@
       <Port>5050</Port>
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="StatisticProjectComponent">
     <option name="excludeCompilerOutput" value="true" />
     <option name="excludeIdea9ArtifactDirectory" value="true" />
@@ -952,25 +945,28 @@
       <changelist id="7cad1c24-42f4-4dbb-9464-341bb161853e" name="Default" comment="" />
       <created>1409865006382</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1409865006382</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49791667" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4154334" sideWeight="0.5083333" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26182964" sideWeight="0.2672035" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4154334" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26182964" sideWeight="0.7327965" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17203514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1036,142 +1032,115 @@
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/lwjgl/jar/lwjgl.jar!/org/lwjgl/opengl/GL15.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
+        <state relative-caret-position="0">
           <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="10" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
-          <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
-          <caret line="137" column="33" selection-start-line="137" selection-start-column="33" selection-end-line="137" selection-end-column="33" />
-          <caret line="138" column="6" selection-start-line="138" selection-start-column="6" selection-end-line="138" selection-end-column="6" />
-          <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
-          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
-          <caret line="141" column="33" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
-          <caret line="142" column="33" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
-          <caret line="143" column="6" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
-          <caret line="144" column="33" selection-start-line="144" selection-start-column="33" selection-end-line="144" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/SecurityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="547" column="16" selection-start-line="547" selection-start-column="16" selection-end-line="547" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/System.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/SecurityManager.java" />
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/Video.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/slick-util.jar!/org/newdawn/slick/opengl/TextureLoader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Scene2DVideo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/math/Matrix4f.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/Console.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/jre/lib/rt.jar!/sun/font/TrueTypeFont.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="101" column="11" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/jre/lib/rt.jar!/sun/font/TrueTypeFont.class" />
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/GenericObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/CounterObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/TextObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/OverlayShader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/slick-util.jar!/org/newdawn/slick/Color.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/EulerCamera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/main/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -1187,14 +1156,14 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jbullet.jar!/com/bulletphysics/dynamics/RigidBody.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="408" column="20" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/GroundObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding />
         </state>
@@ -1202,21 +1171,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/RigidBodyBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/JBulletCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/CharacterObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -1226,14 +1195,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/MeshCollisionShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
           <folding />
         </state>
@@ -1241,14 +1210,14 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/slick-util.jar!/org/newdawn/slick/opengl/Texture.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30722892">
+        <state relative-caret-position="0">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/ChoiceMenuObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
@@ -1256,7 +1225,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="e#199#200#0" expanded="false" />
@@ -1273,7 +1242,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/main/Input.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding />
         </state>
@@ -1281,7 +1250,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/main/Launch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding />
         </state>
@@ -1289,7 +1258,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Material.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#396#397#0" expanded="true" />
@@ -1300,7 +1269,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/Time.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#169#170#0" expanded="false" />
@@ -1315,7 +1284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/ProgramRefrence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
           <folding />
         </state>
@@ -1323,14 +1292,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/EnvironmentVariables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneReg3D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding />
         </state>
@@ -1338,7 +1307,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneReg3DTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
           <folding />
         </state>
@@ -1346,7 +1315,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/RampObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="13" column="81" selection-start-line="13" selection-start-column="81" selection-end-line="13" selection-end-column="81" />
           <folding />
         </state>
@@ -1354,7 +1323,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Transform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
           <folding />
         </state>
@@ -1362,7 +1331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="e#2485#2486#0" expanded="true" />
@@ -1373,7 +1342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/Mesh.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding />
         </state>
@@ -1381,15 +1350,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/physics/MathHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="70" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+        <state relative-caret-position="340">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/Shader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="595">
           <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
           <folding>
             <element signature="e#1462#1463#0" expanded="true" />
@@ -1400,7 +1369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/RenderUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="629">
           <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
           <folding>
             <element signature="e#1080#1081#0" expanded="true" />
@@ -1411,7 +1380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/BasicShader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="238">
           <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
@@ -1419,8 +1388,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/render/shaders/PhongShader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        <state relative-caret-position="816">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1429,15 +1398,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/util/ResourceLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="251" column="84" selection-start-line="251" selection-start-column="84" selection-end-line="251" selection-end-column="84" />
+        <state relative-caret-position="3791">
+          <caret line="346" column="0" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="595">
           <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
           <folding />
         </state>
@@ -1445,8 +1414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneTestLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        <state relative-caret-position="663">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1455,25 +1424,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/Objects/logic/RenderObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="127" column="24" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="1428">
+          <caret line="133" column="24" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+          <folding>
+            <element signature="e#3392#3393#0" expanded="false" />
+            <element signature="e#3444#3445#0" expanded="false" />
+            <marker date="1461063071949" expanded="false" signature="56:321" placeholder="..." />
+            <marker date="1461063071949" expanded="true" signature="924:1195" placeholder="{...}" />
+            <marker date="1461063071949" expanded="true" signature="1248:1409" placeholder="{...}" />
+            <marker date="1461063071949" expanded="false" signature="1550:1561" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1577:1583" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="1631:1642" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1667:1673" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="1700:1711" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1723:1729" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="1765:1776" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1793:1799" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="1836:1847" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1864:1870" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="1921:1932" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="1959:1965" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2004:2015" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2035:2041" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2097:2108" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2141:2147" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2182:2193" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2209:2215" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2263:2274" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2299:2305" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2340:2351" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2367:2373" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2421:2432" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2457:2463" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2502:2513" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2533:2539" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2595:2606" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2639:2645" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2674:2685" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2697:2703" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2744:2755" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2774:2780" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2809:2820" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2832:2838" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2877:2888" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2905:2911" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="2943:2954" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="2969:2975" placeholder=" }" />
+            <marker date="1461063071949" expanded="true" signature="3028:3088" placeholder="{...}" />
+            <marker date="1461063071949" expanded="false" signature="3122:3133" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="3150:3156" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="3205:3216" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="3243:3249" placeholder=" }" />
+            <marker date="1461063071949" expanded="false" signature="3291:3302" placeholder=" { " />
+            <marker date="1461063071949" expanded="false" signature="3324:3330" placeholder=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/harry9137/api/scenes/SceneLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48190477">
-          <caret line="76" column="94" selection-start-line="76" selection-start-column="94" selection-end-line="76" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9498#9499#0" expanded="true" />
-            <element signature="e#9540#9541#0" expanded="true" />
-            <element signature="e#9588#9589#0" expanded="true" />
-            <element signature="e#9624#9625#0" expanded="true" />
-            <element signature="e#9684#9685#0" expanded="true" />
-            <element signature="e#9713#9714#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="84" column="48" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
