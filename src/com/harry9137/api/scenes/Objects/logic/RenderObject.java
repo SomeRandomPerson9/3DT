@@ -44,6 +44,11 @@ public class RenderObject extends GenericObject  {
         //this.collisionShape = body.getCollisionShape();
     }
 
+    public void move(Vector3f dir, float amt)
+    {
+        location = location.Add(dir.Mul(amt));
+    }
+
     public Material getMaterial() {
         return material;
     }

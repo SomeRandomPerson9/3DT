@@ -8,6 +8,10 @@ import com.harry9137.api.render.lighting.BaseLight;
 import com.harry9137.api.render.lighting.DirectionalLight;
 import com.harry9137.api.util.RenderUtil;
 
+import org.newdawn.slick.Color;
+
+import java.awt.*;
+
 public class PhongShader extends Shader {
     private static final PhongShader instance = new PhongShader();
 
@@ -43,23 +47,18 @@ public class PhongShader extends Shader {
     }
 
     public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Material material) {
-        if (material != null && material.getTexture() != null)
-            material.getTexture().bind();
-        else
-            RenderUtil.unbindTextures();
-
         setUniform("transform", projectedMatrix.mul(worldMatrix));
-        if(material != null) {
+        if(material != null && material.getColor() != null) {
             setUniform("baseColor", material.getColor());
         }
         else{
-            setUniform("baseColor", new Vector3f(0f,0f,0f));
+            setUniform("baseColor", new Vector3f(255,255,255));
+            //Color.white.bind();
         }
+
         setUniform("ambientLight", ambientLight);
 
         setUniform("directionalLight", directionalLight);
-
-
     }
 
     public static Vector3f getAmbientLight() {

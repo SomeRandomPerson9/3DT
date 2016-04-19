@@ -6,10 +6,12 @@ import com.harry9137.api.physics.MathHelper;
 import com.harry9137.api.render.Material;
 import com.harry9137.api.render.math.Matrix4f;
 import com.harry9137.api.render.math.Vector3f;
+import com.harry9137.api.scenes.Objects.ChoiceMenuObject;
 import com.harry9137.api.scenes.Objects.logic.GenericObject;
 import com.harry9137.api.scenes.Objects.logic.RenderObject;
 import com.harry9137.api.scenes.Objects.logic.TextObject;
 import com.harry9137.api.util.ProgramRefrence;
+import com.harry9137.api.util.RenderUtil;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.glu.Sphere;
@@ -43,17 +45,21 @@ public class SceneLoader {
                 GL11.glLoadIdentity();
                 selectedScene.getDynamicsWorld().stepSimulation(1.0f / 60.0f);
                 for(RenderObject renderObject : selectedScene.getObjects()){
-                    renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin));
-                    System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
+                    if (renderObject.isPhys() && !MathHelper.anyGreaterThan(0.1f, renderObject.getRigidBodyShape().getLinearVelocity(new javax.vecmath.Vector3f(0,0,0)))) {
+                        renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin));
+                        System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
+                    }
                 }
 
             }
             for (int i = 0; i < scenes.size(); i++) {
-                if (scenes.get(i).getBtsUpdateLvl() > 0) {
-                    scenes.get(i).update();
-                }
-                if (selectedSceneNumber == i) {
-                    selectedScene.update();
+                if (scenes.get(i) != null) {
+                    if (scenes.get(i).getBtsUpdateLvl() > 0) {
+                        scenes.get(i).update();
+                    }
+                    if (selectedSceneNumber == i) {
+                        selectedScene.update();
+                    }
                 }
             }
         }
@@ -61,7 +67,6 @@ public class SceneLoader {
     public static void renderScene(){
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
             for (RenderObject renderObject : selectedScene.getObjects()) {
-                GL11.glPushMatrix();
                 selectedScene.getRegShader().bind();
                 if(renderObject.isHeld()) {
                         Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
@@ -71,9 +76,16 @@ public class SceneLoader {
                 else{
                     selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial());
                 }
+
+                if (renderObject.getMaterial() != null && renderObject.getMaterial().getTexture() != null) {
+                    renderObject.getMaterial().getTexture().bind();
+                    System.out.println("Its rendering " + renderObject.getObjName());
+                }
+                else
+                    RenderUtil.unbindTextures();
+
                 renderObject.getMesh().draw();
-                GL11.glPopMatrix();
-                if(Game.showBoundingBoxes && selectedScene.getDynamicsWorld() != null){
+                /*if(Game.showBoundingBoxes && selectedScene.getDynamicsWorld() != null && renderObject.isPhys()){
                     GL11.glPushMatrix();
                     javax.vecmath.Vector3f position = renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin;
                     sphere.setDrawStyle(GLU.GLU_SILHOUETTE);
@@ -81,10 +93,10 @@ public class SceneLoader {
                     GL11.glColor4f(0, 1, 0, 1);
                     sphere.draw(renderObject.getRigidBodyShape().getCollisionShape().getAngularMotionDisc(), 30, 30);
                     GL11.glPopMatrix();
-                }
+                */
             }
             for(GenericObject genericObject : selectedScene.getOverlayObjects()){
-                if(genericObject instanceof TextObject){
+                /*if(genericObject instanceof TextObject){
                     TextObject textObj = (TextObject)genericObject;
                     try {
                         GL11.glPushMatrix();
@@ -104,6 +116,16 @@ public class SceneLoader {
                         }
                     }
                 }
+                else if(genericObject instanceof ChoiceMenuObject){
+                    ChoiceMenuObject choiceMenuObject = (ChoiceMenuObject)genericObject;
+
+                    try{
+                        choiceMenuObject.mesh.draw(choiceMenuObject.xPos, choiceMenuObject.yPos);
+                    }
+                    catch(Exception e){
+
+                    }
+                }*/
             }
         }
         else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){

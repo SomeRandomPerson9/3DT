@@ -1,5 +1,6 @@
 package com.harry9137.api.util;
 
+import com.harry9137.api.render.Material;
 import com.harry9137.api.render.math.Matrix4f;
 import com.harry9137.api.render.Vertex;
 import org.lwjgl.BufferUtils;
@@ -71,6 +72,15 @@ public class Util {
         }
         return result;
     }
+
+    public static Material[] toMaterialArray(ArrayList<Material> materialArrayList){
+        Material[] result = new Material[materialArrayList.size()];
+        for(int i = 0; i < materialArrayList.size(); i++){
+            result[i] = materialArrayList.get(i);
+        }
+        return result;
+    }
+
     public static float[] stringToFloatArray(String[] strings){
         float[] result = new float[strings.length];
         for(int i = 0; i < strings.length; i++){
