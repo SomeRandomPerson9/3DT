@@ -7,6 +7,9 @@ import com.harry9137.api.render.Mesh;
 import com.harry9137.api.render.Transform;
 import com.harry9137.api.render.math.Vector3f;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class RenderObject extends GenericObject  {
 
     String objName;
@@ -18,8 +21,8 @@ public class RenderObject extends GenericObject  {
     private CollisionShape collisionShape;
     private RigidBody rigidBodyShape;
 
-    private Material material;
-    private Mesh mesh;
+    private HashMap<String, Material> material;
+    private HashMap<String, Mesh> mesh;
     private Transform transform;
     private Vector3f velocity;
     private Vector3f acceleration;
@@ -27,7 +30,15 @@ public class RenderObject extends GenericObject  {
     private Vector3f camTransform;
     private boolean held;
 
-    public RenderObject(Mesh mesh, Material material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration, boolean phys){
+    public RenderObject(Transform globalTransform){
+        this.velocity = new Vector3f(0,0,0);
+        this.acceleration = new Vector3f(0,0,0);
+        this.location = new Vector3f(0,0,0);
+        this.transform = globalTransform.copy().addTranslation(location);
+        this.phys = false;
+    }
+
+    public RenderObject(HashMap<String, Mesh> mesh, HashMap<String, Material> material, Transform transform, Vector3f location, Vector3f velocity, Vector3f acceleration, boolean phys){
         this.mesh = mesh;
         this.material = material;
         this.velocity = velocity;
@@ -37,7 +48,7 @@ public class RenderObject extends GenericObject  {
         this.phys = phys;
     }
 
-    public RenderObject(Mesh mesh1, RigidBody body){
+    public RenderObject(HashMap<String, Mesh> mesh1, RigidBody body){
         this.mesh = mesh1;
         this.rigidBodyShape = body;
         this.setRigidBody(true);
@@ -49,20 +60,35 @@ public class RenderObject extends GenericObject  {
         location = location.Add(dir.Mul(amt));
     }
 
-    public Material getMaterial() {
+    public HashMap<String, Material> getMaterials() {
         return material;
     }
 
-    public void setMaterial(Material material) {
+    public void setMaterials(HashMap<String, Material> material) {
         this.material = material;
     }
+    public void addMaterial(String key, Material value){
+        material.put(key, value);
+    }
 
-    public Mesh getMesh() {
+    public Material getMaterial(String key){
+        return material.get(key);
+    }
+
+    public HashMap<String, Mesh> getMeshs() {
         return mesh;
     }
 
-    public void setMesh(Mesh mesh) {
+    public void setMeshs(HashMap<String, Mesh> mesh) {
         this.mesh = mesh;
+    }
+
+    public void addMesh(String key, Mesh value){
+        mesh.put(key, value);
+    }
+
+    public Mesh getMesh(String key){
+        return mesh.get(key);
     }
 
     public Transform getTransform() {

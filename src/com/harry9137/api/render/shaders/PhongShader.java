@@ -56,6 +56,12 @@ public class PhongShader extends Shader {
             //Color.white.bind();
         }
 
+        if (material != null && material.getTexture() != null) {
+            material.getTexture().bind();
+        }
+        else
+            RenderUtil.unbindTextures();
+
         setUniform("ambientLight", ambientLight);
 
         setUniform("directionalLight", directionalLight);

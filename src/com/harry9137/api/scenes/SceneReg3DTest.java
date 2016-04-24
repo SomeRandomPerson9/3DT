@@ -32,8 +32,8 @@ public class SceneReg3DTest extends SceneBase {
                 0,1,2,
                 0,2,3};
         mesh.addVertices(vertices, indices);
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(1,0,0)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
-        this.addObject(new RenderObject(ResourceLoader.loadMesh("Sphere.obj"), new Material(null, new Vector3f(0,1,0)), this.getTransform(), new Vector3f(5f,0,2), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
+        //this.addObject(new RenderObject(ResourceLoader.loadMesh("Cube.obj"), new Material(null, new Vector3f(1,0,0)), this.getTransform(), new Vector3f(-0.5f,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
+        //this.addObject(new RenderObject(ResourceLoader.loadMesh("Sphere.obj"), new Material(null, new Vector3f(0,1,0)), this.getTransform(), new Vector3f(5f,0,2), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
         //this.addObject(new RenderObject(ResourceLoader.loadMesh("soccer ball.obj"), new Material(null, new Vector3f(0,1,0)), this.getTransform(), new Vector3f(10f,0,2), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
         this.sceneType = SceneType.THREE_DIMENSIONAL;
     }

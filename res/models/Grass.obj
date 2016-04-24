@@ -1,4 +1,4 @@
-# Blender v2.73 (sub 0) OBJ File: 'Grass.blend'
+e# Blender v2.73 (sub 0) OBJ File: 'Grass.blend'
 # www.blender.org
 mtllib Grass.mtl
 o Cube.001
@@ -24,6 +24,7 @@ f 7 8 3
 f 8 5 4
 f 1 2 4
 f 8 7 5
+#mtlDone
 o Cube
 v -18.810387 -0.013674 -0.032546
 v -18.765409 -0.058648 -17.283960
@@ -47,3 +48,4 @@ f 9 13 10
 f 11 10 15
 f 11 15 12
 f 13 9 16
+#mtlDone

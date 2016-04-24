@@ -5,4 +5,8 @@ public class GenericObject {
     public String getObjName(){
         return objName;
     }
+    public GenericObject setObjName(String la){
+        objName = la;
+        return this;
+    }
 }

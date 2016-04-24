@@ -16,6 +16,7 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -102,15 +103,24 @@ public class ResourceLoader {
         System.out.println(integers);
         return res;
     }
-    public static Mesh loadMesh(InputStream stream){
-        ArrayList<Vertex> vertices = new ArrayList<Vertex>();
-        ArrayList<Integer> integers = new ArrayList<Integer>();
+    public static Object[] loadMeshs(String fileName){
+        String[] splitArray = fileName.split("\\.");
+        String ext = splitArray[splitArray.length-1];
+        if(!ext.equals("obj")){
+            System.err.println("Error: File format not supported for mesh data: " + ext);
+            new Exception().printStackTrace();
+            System.exit(1);
+        }
+
         BufferedReader meshReader = null;
-        File file  = inputStreamToFile(stream);
+        HashMap<String, Mesh> returnData = new HashMap<>();
+        HashMap<String, Material> mtlData = new HashMap<>();
 
         try{
-            meshReader = new BufferedReader(new FileReader(file));
+            meshReader = new BufferedReader(new FileReader("./res/models/" + fileName));
             String line;
+            int indCount = 0;
+            int indCountRast = 0;
             while((line = meshReader.readLine()) != null){
                 String[] tokens = line.split(" ");
                 tokens = Util.removeEmptyStrings(tokens);
@@ -118,17 +128,63 @@ public class ResourceLoader {
                 if(tokens.length == 0 || tokens[0].equals("#")){
                     continue;
                 }
-                else if(tokens[0].equals("v")){
-                    vertices.add(new Vertex(new Vector3f(Float.valueOf(tokens[1]), Float.valueOf(tokens[2]), Float.valueOf(tokens[3]))));
+                else if(tokens[0].equals("mtllib")){
+                    mtlData = loadMtl(tokens[1]);
                 }
-                else if(tokens[0].equals("f")){
-                    integers.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
-                    integers.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
-                    integers.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
-                    if(tokens.length > 4){
-                        integers.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
-                        integers.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
-                        integers.add(Integer.parseInt(tokens[4].split("/")[0]) - 1);
+                else if(tokens[0].equals("o")){
+                    String mName = tokens[1];
+                    Mesh res = new Mesh();
+
+                    ArrayList<Vertex> vertices = new ArrayList<Vertex>();
+                    ArrayList<Integer> integers = new ArrayList<Integer>();
+
+                    line = null;
+                    while((line = meshReader.readLine()) != null){
+                        System.out.println("reLn");
+                        String[] segments = line.split(" ");
+                        segments = Util.removeEmptyStrings(segments);
+
+                        if(segments[0].equals("v")){
+                            vertices.add(new Vertex(new Vector3f(Float.valueOf(segments[1]), Float.valueOf(segments[2]), Float.valueOf(segments[3]))));
+                            indCount++;
+                        }
+                        else if(segments[0].equals("f")){
+                            integers.add((Integer.parseInt(segments[1].split("/")[0]) - 1) - indCountRast);
+                            integers.add((Integer.parseInt(segments[2].split("/")[0]) - 1) - indCountRast);
+                            integers.add((Integer.parseInt(segments[3].split("/")[0]) - 1) - indCountRast);
+                            if(segments.length > 4){
+                                integers.add((Integer.parseInt(segments[1].split("/")[0]) - 1) - indCountRast);
+                                integers.add((Integer.parseInt(segments[2].split("/")[0]) - 1) - indCountRast);
+                                integers.add((Integer.parseInt(segments[4].split("/")[0]) - 1) - indCountRast);
+                            }
+                        }
+                        else if(segments[0].equals("usemtl")){
+                            res.setRequiredMtl(segments[1]);
+                        }
+                        else if(segments[0].equals("#") || segments[0].equals("#mtlDone")){
+                            System.out.println("Finishing preqiol");
+                            if(segments[0].equals("#mtlDone")){
+                                System.out.println("Finishing ap");
+                                System.out.println(vertices.toString());
+                                System.out.println(integers.toString());
+                                Vertex[] resV = new Vertex[vertices.size()];
+                                Integer[] resI = new Integer[integers.size()];
+                                vertices.toArray(resV);
+                                integers.toArray(resI);
+                                res.addVertices(resV, Util.toIntArray(resI));
+                                res.setObjName(mName);
+
+                                indCountRast = indCount;
+
+                                returnData.put(mName, res);
+
+                                break;
+                            }
+                            else{
+                                continue;
+                            }
+                        }
+                        System.out.println(line);
                     }
                 }
             }
@@ -137,13 +193,7 @@ public class ResourceLoader {
             e.printStackTrace();
             System.exit(-1);
         }
-        Mesh res = new Mesh();
-        Vertex[] resV = new Vertex[vertices.size()];
-        Integer[] resI = new Integer[integers.size()];
-        vertices.toArray(resV);
-        integers.toArray(resI);
-        res.addVertices(resV, Util.toIntArray(resI));
-        return res;
+        return new Object[]{returnData, mtlData};
     }
     public static ArrayList<SceneFile> loadScene(String fileName) throws IOException{
         ZipFile zipFile = new ZipFile("./res/scenes/" + fileName);
@@ -160,7 +210,7 @@ public class ResourceLoader {
             String[] splitArray = inputStreamFile.getName().split("\\.");
             String ext = splitArray[splitArray.length-1];
             if(ext.equals("obj")){
-                temp = loadMesh(stream);
+                //temp = loadMesh(stream);
             }
             else if(ext.equals("txt")){
                 BufferedReader temp2 = new BufferedReader(new FileReader(inputStreamFile));
@@ -218,8 +268,8 @@ public class ResourceLoader {
         return res;
     }
 
-    public static Material[] loadMtl(String fileName){
-        ArrayList<Material> materialArrayList = new ArrayList<>();
+    public static HashMap<String, Material> loadMtl(String fileName){
+        HashMap<String, Material> materialArrayList = new HashMap<>();
 
         try {
             FileReader fileReader = new FileReader("./res/textures/" + fileName);
@@ -237,6 +287,7 @@ public class ResourceLoader {
                 }
                 else if(segments[0].equals("newmtl")){
                     Material material = new Material(null, null);
+                    String mtlName = segments[1];
                     while((line = bufferedReader.readLine()) != null){
                         String[] tokens = line.split(" ");
                         tokens = Util.removeEmptyStrings(tokens);
@@ -244,6 +295,9 @@ public class ResourceLoader {
 
                         if(tokens.length == 0 || tokens[0].isEmpty() || tokens[0].equals("\n")){
                             break;
+                        }
+                        else if(tokens[0].equals("Kd")){
+                            material.setColor(new Vector3f(Float.valueOf(tokens[1]), Float.valueOf(tokens[2]), Float.valueOf(tokens[3])));
                         }
                         else if(tokens[0].equals("map_Kd")){
                             System.out.println(tokens[1]);
@@ -253,7 +307,7 @@ public class ResourceLoader {
                         }
 
                     }
-                    materialArrayList.add(material);
+                    materialArrayList.put(mtlName, material);
                 }
 
             }
@@ -263,11 +317,7 @@ public class ResourceLoader {
             e.printStackTrace();
         }
 
-        if(Util.toMaterialArray(materialArrayList)[0] != null) {
-            System.out.println("ITS NOT NULL");
-        }
-
-        return Util.toMaterialArray(materialArrayList);
+        return materialArrayList;
     }
 
     /*public static CollisionMesh getCollisionMesh(String fileName){

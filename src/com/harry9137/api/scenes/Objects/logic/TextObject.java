@@ -90,7 +90,7 @@ public class TextObject extends GenericObject {
         return objName;
     }
 
-    public TextObject setObjName(String objName) {
+    public GenericObject setObjName(String objName) {
         this.objName = objName;
         return this;
     }

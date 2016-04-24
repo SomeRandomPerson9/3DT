@@ -22,6 +22,8 @@ import com.harry9137.api.util.ResourceLoader;
 import com.harry9137.api.util.Time;
 import com.harry9137.api.util.Util;
 
+import java.util.HashMap;
+
 public class SceneTestLevel extends SceneBase {
     public SceneTestLevel(){
         super();
@@ -36,9 +38,26 @@ public class SceneTestLevel extends SceneBase {
         this.getTransform().setCamera(this.getCamera());
         //this.addObject(new GroundObject(this.getTransform()));
         //this.addObject(new CharacterObject(this.getTransform()));
-        RenderObject renderObject = new RenderObject(ResourceLoader.loadMesh("Grass.obj"), ResourceLoader.loadMtl("Grass.mtl")[0], this.getTransform(), new Vector3f(0,0,0), new Vector3f(0,0,0), new Vector3f(0,0,0), false);
+        RenderObject renderObject = new RenderObject(this.getTransform());
+        Object[] grassRes = ResourceLoader.loadMeshs("Grass.obj");
+        renderObject.setMeshs((HashMap<String, Mesh>) grassRes[0]);
+        renderObject.setMaterials((HashMap<String, Material>) grassRes[1]);
         renderObject.setObjName("Grass");
-        this.addObject(renderObject);
+        //this.addObject(renderObject);
+
+        RenderObject deskObj = new RenderObject(this.getTransform());
+        Object[] deskRes = ResourceLoader.loadMeshs("Desk.obj");
+        deskObj.setMeshs((HashMap<String, Mesh>) deskRes[0]);
+        deskObj.setMaterials((HashMap<String, Material>) deskRes[1]);
+        deskObj.setObjName("Desk");
+        this.addObject(deskObj);
+
+        RenderObject xsedxedrgdxObj = new RenderObject(this.getTransform());
+        Object[] xsedxedrgdxRes = ResourceLoader.loadMeshs("xsedxedrgdx.obj");
+        xsedxedrgdxObj.setMeshs((HashMap<String, Mesh>) xsedxedrgdxRes[0]);
+        xsedxedrgdxObj.setMaterials((HashMap<String, Material>) xsedxedrgdxRes[1]);
+        xsedxedrgdxObj.setObjName("xsedxedrgdx");
+        this.addObject(xsedxedrgdxObj);
         //this.getObject("Floor").getMesh().getVbo();
         //this.addOverlay(new TextObject(ProgramRefrence.fonts.arialFont, Integer.toString(0), 0, 0).setObjName("ColorCounter"));
         //this.addOverlay(new ChoiceMenuObject());
@@ -64,29 +83,29 @@ public class SceneTestLevel extends SceneBase {
 
         boolean didntExecute = true;
         if(Input.getKeyDown(Input.KEY_O)){
-            this.getObject("Floor").getMaterial().getColor().SetX(this.getObject("Floor").getMaterial().getColor().GetX() + 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetX(this.getObject("Floor").getMaterial("").getColor().GetX() + 0.1f);
         }
         else if(Input.getKeyDown(Input.KEY_L)){
-            this.getObject("Floor").getMaterial().getColor().SetX(this.getObject("Floor").getMaterial().getColor().GetX() - 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetX(this.getObject("Floor").getMaterial("").getColor().GetX() - 0.1f);
         }
         else if(Input.getKeyDown(Input.KEY_I)){
-            this.getObject("Floor").getMaterial().getColor().SetY(this.getObject("Floor").getMaterial().getColor().GetY() + 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetY(this.getObject("Floor").getMaterial("").getColor().GetY() + 0.1f);
         }
         else if(Input.getKeyDown(Input.KEY_K)){
-            this.getObject("Floor").getMaterial().getColor().SetY(this.getObject("Floor").getMaterial().getColor().GetY() - 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetY(this.getObject("Floor").getMaterial("").getColor().GetY() - 0.1f);
         }
         else if(Input.getKeyDown(Input.KEY_U)){
-            this.getObject("Floor").getMaterial().getColor().SetZ(this.getObject("Floor").getMaterial().getColor().GetZ() + 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetZ(this.getObject("Floor").getMaterial("").getColor().GetZ() + 0.1f);
         }
         else if(Input.getKeyDown(Input.KEY_J)){
-            this.getObject("Floor").getMaterial().getColor().SetZ(this.getObject("Floor").getMaterial().getColor().GetZ() - 0.1f);
+            this.getObject("Floor").getMaterial("").getColor().SetZ(this.getObject("Floor").getMaterial("").getColor().GetZ() - 0.1f);
         }
         else{
             didntExecute = false;
         }
 
         if(didntExecute){
-            System.out.println(this.getObject("Floor").getMaterial().getColor().GetX() + " " + this.getObject("Floor").getMaterial().getColor().GetY() + " " + this.getObject("Floor").getMaterial().getColor().GetZ());
+            System.out.println(this.getObject("Floor").getMaterial("").getColor().GetX() + " " + this.getObject("Floor").getMaterial("").getColor().GetY() + " " + this.getObject("Floor").getMaterial("").getColor().GetZ());
         }
 
         com.bulletphysics.linearmath.Transform controlTransform = new com.bulletphysics.linearmath.Transform();

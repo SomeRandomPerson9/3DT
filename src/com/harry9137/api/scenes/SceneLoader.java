@@ -4,6 +4,7 @@ import com.bulletphysics.linearmath.Transform;
 import com.harry9137.api.main.Game;
 import com.harry9137.api.physics.MathHelper;
 import com.harry9137.api.render.Material;
+import com.harry9137.api.render.Mesh;
 import com.harry9137.api.render.math.Matrix4f;
 import com.harry9137.api.render.math.Vector3f;
 import com.harry9137.api.scenes.Objects.ChoiceMenuObject;
@@ -31,7 +32,7 @@ public class SceneLoader {
     public static void selectScene(Integer integer){
         if(selectedScene != null) {
             selectedScene.cleanup();
-            selectedScene.getRegShader().updateUniforms(new Matrix4f(),new Matrix4f(), null);
+            //selectedScene.getRegShader().updateUniforms(new Matrix4f(),new Matrix4f(), null);
         }
         selectedScene = scenes.get(integer);
         selectedSceneNumber = integer;
@@ -67,24 +68,25 @@ public class SceneLoader {
     public static void renderScene(){
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
             for (RenderObject renderObject : selectedScene.getObjects()) {
-                selectedScene.getRegShader().bind();
-                if(renderObject.isHeld()) {
+                /*if(renderObject.isHeld()) {
                         Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
                         selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), (Matrix4f) temp[0], renderObject.getMaterial());
                         //renderObject.setLocation(((Matrix4f)temp[2]).get;
                 }
                 else{
                     selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial());
+                }*/
+                for(Mesh meshyThing : renderObject.getMeshs().values()){
+                    if(renderObject.getObjName().equals("Desk")){
+                        //System.out.println("tryingtorender");
+                    }
+                    selectedScene.getRegShader().bind();
+                    //System.out.println("Object " + meshyThing.getObjName() + " has material " + meshyThing.getRequiredMtl());
+                    selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial(meshyThing.getRequiredMtl()));
+                    meshyThing.draw();
                 }
 
-                if (renderObject.getMaterial() != null && renderObject.getMaterial().getTexture() != null) {
-                    renderObject.getMaterial().getTexture().bind();
-                    System.out.println("Its rendering " + renderObject.getObjName());
-                }
-                else
-                    RenderUtil.unbindTextures();
-
-                renderObject.getMesh().draw();
+                //renderObject.getMesh().draw();
                 /*if(Game.showBoundingBoxes && selectedScene.getDynamicsWorld() != null && renderObject.isPhys()){
                     GL11.glPushMatrix();
                     javax.vecmath.Vector3f position = renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin;

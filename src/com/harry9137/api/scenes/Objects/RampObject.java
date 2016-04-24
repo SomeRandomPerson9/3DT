@@ -11,7 +11,8 @@ import com.harry9137.api.util.ResourceLoader;
 
 public class RampObject extends RenderObject {
     public RampObject(Transform sceneTransform){
-        super(ResourceLoader.loadMesh("Ramp.obj"), new Material(null, new Vector3f(2f, 1.4f, 0f)), sceneTransform, new Vector3f(15,0,15), new Vector3f(0,0,0), new Vector3f(0,0,0), false);
+        super(sceneTransform);
+        //super(ResourceLoader.loadMesh("Ramp.obj"), new Material(null, new Vector3f(2f, 1.4f, 0f)), sceneTransform, new Vector3f(15,0,15), new Vector3f(0,0,0), new Vector3f(0,0,0), false);
 
         //BvhTriangleMeshShape bvhTriangleMeshShape = new BvhTriangleMeshShape(ResourceLoader.getCollisionMesh("Ramp.obj"), true);
     }

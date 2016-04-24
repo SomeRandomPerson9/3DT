@@ -1,16 +1,18 @@
 package com.harry9137.api.render;
 
 import com.harry9137.api.render.math.Vector3f;
+import com.harry9137.api.scenes.Objects.logic.GenericObject;
 import com.harry9137.api.util.Util;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL15.*;
 import static org.lwjgl.opengl.GL20.*;
 
-public class Mesh {
+public class Mesh extends GenericObject {
     private int vbo;
     private int ibo;
     private int size;
+    private String requiredMtl;
 
     public Mesh(){
         vbo = glGenBuffers();
@@ -76,5 +78,13 @@ public class Mesh {
 
     public int getVbo() {
         return vbo;
+    }
+
+    public String getRequiredMtl() {
+        return requiredMtl;
+    }
+
+    public void setRequiredMtl(String requiredMtl) {
+        this.requiredMtl = requiredMtl;
     }
 }

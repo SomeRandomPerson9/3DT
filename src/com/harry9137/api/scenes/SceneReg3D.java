@@ -32,7 +32,7 @@ public class SceneReg3D extends SceneBase {
                 0,1,2,
                 0,2,3};
         mesh.addVertices(vertices, indices);
-        this.addObject(new RenderObject(mesh, new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(1,1,1)), this.getTransform(), new Vector3f(0,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
+        //this.addObject(new RenderObject(mesh, new Material(ResourceLoader.loadTexture("test.png"), new Vector3f(1,1,1)), this.getTransform(), new Vector3f(0,0,5), new Vector3f(0,0,0), new Vector3f(0,0,0), true));
         this.setBtsUpdateLvl(2);
         this.sceneType = SceneType.THREE_DIMENSIONAL;
     }

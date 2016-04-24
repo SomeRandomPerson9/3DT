@@ -16,13 +16,23 @@ import com.harry9137.api.util.ResourceLoader;
 import javax.vecmath.Matrix4f;
 import javax.vecmath.Quat4f;
 import javax.vecmath.Vector3f;
+import java.util.HashMap;
 
 public class CharacterObject extends RenderObject {
 
     private static final Transform DEFAULT_BALL_TRANSFORM = new Transform(new Matrix4f(new Quat4f(0, 0, 0, 1), new Vector3f(0, 35, 0), 1.0f));
 
     public CharacterObject(com.harry9137.api.render.Transform sceneTransform) {
-        super(ResourceLoader.loadMesh("Chara.obj"), new Material(null, new com.harry9137.api.render.math.Vector3f(1,0,2)), sceneTransform, new com.harry9137.api.render.math.Vector3f(0,1,0), new com.harry9137.api.render.math.Vector3f(0,0,0), new com.harry9137.api.render.math.Vector3f(0,0,0), true);
+        super(sceneTransform);
+
+        Object[] mRes = ResourceLoader.loadMeshs("Chara.obj");
+        this.setMeshs((HashMap<String, Mesh>) mRes[0]);
+
+        HashMap<String, Material> materialHashMap = new HashMap<>();
+        materialHashMap.put("None", new Material(null, new com.harry9137.api.render.math.Vector3f(1,0,2)));
+        this.setMaterials(materialHashMap);
+        this.setLocation(new com.harry9137.api.render.math.Vector3f(0,1,0));
+        this.setPhys(true);
 
         CollisionShape ballShape = new BoxShape(new Vector3f(2.0f, 2.0f, 2.0f));
         MotionState ballMotionState = new DefaultMotionState(DEFAULT_BALL_TRANSFORM);
