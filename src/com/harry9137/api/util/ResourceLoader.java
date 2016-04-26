@@ -140,7 +140,7 @@ public class ResourceLoader {
 
                     line = null;
                     while((line = meshReader.readLine()) != null){
-                        System.out.println("reLn");
+                        //System.out.println("reLn");
                         String[] segments = line.split(" ");
                         segments = Util.removeEmptyStrings(segments);
 
@@ -162,9 +162,9 @@ public class ResourceLoader {
                             res.setRequiredMtl(segments[1]);
                         }
                         else if(segments[0].equals("#") || segments[0].equals("#mtlDone")){
-                            System.out.println("Finishing preqiol");
+                            //System.out.println("Finishing preqiol");
                             if(segments[0].equals("#mtlDone")){
-                                System.out.println("Finishing ap");
+                                //System.out.println("Finishing ap");
                                 System.out.println(vertices.toString());
                                 System.out.println(integers.toString());
                                 Vertex[] resV = new Vertex[vertices.size()];
@@ -184,7 +184,7 @@ public class ResourceLoader {
                                 continue;
                             }
                         }
-                        System.out.println(line);
+                        //System.out.println(line);
                     }
                 }
             }

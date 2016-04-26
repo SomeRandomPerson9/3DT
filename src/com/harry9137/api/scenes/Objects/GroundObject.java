@@ -25,6 +25,7 @@ public class GroundObject extends RenderObject {
 
         HashMap<String, Material> materialHashMap = new HashMap<>();
         materialHashMap.put("Material.001", new Material(null, new com.harry9137.api.render.math.Vector3f(1.19f,2,2)));
+        this.setMaterials(materialHashMap);
 
         this.setRigidBodyShape(RigidBodyBuilder.build(0, new StaticPlaneShape(new Vector3f(0,1,0), 0.25f), new DefaultMotionState(new Transform(new Matrix4f(new Quat4f(0,0,0,1), new Vector3f(0,0,0), 1.0f))), 0.25f));
         this.setObjName("Floor");

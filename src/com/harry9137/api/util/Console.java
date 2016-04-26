@@ -8,6 +8,7 @@ import java.io.PipedInputStream;
 
 public class Console extends WindowAdapter implements WindowListener, ActionListener, Runnable
 {
+
     private JFrame frame;
     private JTextArea textArea;
     private Thread reader;
@@ -131,6 +132,14 @@ public class Console extends WindowAdapter implements WindowListener, ActionList
     }
     public void addText(String text){
         textArea.append("[" + "] " + text + "\n");
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
     }
 }
 

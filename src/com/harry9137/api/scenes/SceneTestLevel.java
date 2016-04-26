@@ -119,13 +119,13 @@ public class SceneTestLevel extends SceneBase {
         }
         else if(Input.getKey(Input.KEY_DOWN) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).x > -10f){
             this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
-            javax.vecmath.Vector3f force = MathHelper.baked3fToVecMath(this.getCamera().getForward().Mul(new Vector3f(0,0,-500f)));
+            javax.vecmath.Vector3f force = MathHelper.baked3fToVecMath(this.getCamera().getForward().Mul(new Vector3f(-500f,0,0)));
             this.getObject("Chara").getRigidBodyShape().activate(true);
             this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
         if(Input.getKey(Input.KEY_LEFT) && this.getObject("Chara").getRigidBodyShape().getLinearVelocity(controlTransform.origin).z < 10f){
             this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(controlTransform);
-            javax.vecmath.Vector3f force = MathHelper.baked3fToVecMath(this.getCamera().getForward().Mul(new Vector3f(0,0,500f)));
+            javax.vecmath.Vector3f force = MathHelper.baked3fToVecMath(this.getCamera().getForward().Mul(new Vector3f(500f,0,0)));
             this.getObject("Chara").getRigidBodyShape().activate(true);
             this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }

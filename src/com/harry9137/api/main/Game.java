@@ -2,6 +2,7 @@ package com.harry9137.api.main;
 
 import com.harry9137.api.render.Window;
 import com.harry9137.api.scenes.*;
+import com.harry9137.api.scenes.levels.SceneTitleScreen;
 import com.harry9137.api.util.Console;
 import com.harry9137.api.util.ProgramRefrence;
 import com.harry9137.api.util.RenderUtil;
@@ -23,16 +24,18 @@ public class Game {
             instance = new Game();
             SceneLoader.addScene(0, new SceneReg3D());
             SceneLoader.addScene(1, new SceneReg3DTest());
-            SceneLoader.addScene(3, new SceneTestLevel());
+            SceneLoader.addScene(2, new SceneTestLevel());
+            SceneLoader.addScene(3, new SceneTitleScreen());
             console = new Console();
+            console.getFrame().setVisible(false);
             console.addText("Scenes Added to Loader!");
             try {
-                SceneLoader.addScene(2, new Scene2DVideo().setVideo(new Video(new File("F:\\Videos\\Final Exports\\Assasins Creed Unity Demo"))));
+                //SceneLoader.addScene(2, new Scene2DVideo().setVideo(new Video(new File("F:\\Videos\\Final Exports\\Assasins Creed Unity Demo"))));
             }
-            catch (IOException e){
+            catch (Exception e){
 
             }
-            SceneLoader.selectScene(0);
+            SceneLoader.selectScene(3);
         }
         return instance;
     }

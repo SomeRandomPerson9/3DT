@@ -46,9 +46,9 @@ public class SceneLoader {
                 GL11.glLoadIdentity();
                 selectedScene.getDynamicsWorld().stepSimulation(1.0f / 60.0f);
                 for(RenderObject renderObject : selectedScene.getObjects()){
-                    if (renderObject.isPhys() && !MathHelper.anyGreaterThan(0.1f, renderObject.getRigidBodyShape().getLinearVelocity(new javax.vecmath.Vector3f(0,0,0)))) {
+                    if (renderObject.isPhys()) {
                         renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin));
-                        System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
+                        //System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
                     }
                 }
 
@@ -82,6 +82,8 @@ public class SceneLoader {
                     }
                     selectedScene.getRegShader().bind();
                     //System.out.println("Object " + meshyThing.getObjName() + " has material " + meshyThing.getRequiredMtl());
+                    //System.out.println(renderObject.getLocation());
+                    //System.out.println("Stuf + Tjomgs: " + renderObject.getMaterials());
                     selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial(meshyThing.getRequiredMtl()));
                     meshyThing.draw();
                 }
