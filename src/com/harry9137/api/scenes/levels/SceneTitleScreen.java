@@ -84,7 +84,7 @@ public class SceneTitleScreen extends SceneBase {
 
             this.getObject("Chara").getRigidBodyShape().applyCentralForce(force);
         }
-        if(Input.getKeyDown(Input.KEY_RETURN) && ){
+        if(Input.getKeyDown(Input.KEY_RETURN)){
 
         }
     }

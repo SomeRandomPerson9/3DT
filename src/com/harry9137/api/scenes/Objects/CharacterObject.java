@@ -25,14 +25,16 @@ public class CharacterObject extends RenderObject {
     public CharacterObject(com.harry9137.api.render.Transform sceneTransform) {
         super(sceneTransform);
 
-        Object[] mRes = ResourceLoader.loadMeshs("Chara.obj");
+        Object[] mRes = ResourceLoader.loadMeshs("untitled.obj");
         this.setMeshs((HashMap<String, Mesh>) mRes[0]);
 
-        HashMap<String, Material> materialHashMap = new HashMap<>();
+        /*HashMap<String, Material> materialHashMap = new HashMap<>();
         materialHashMap.put("None", new Material(null, new com.harry9137.api.render.math.Vector3f(1,0,2)));
         this.setMaterials(materialHashMap);
         this.setLocation(new com.harry9137.api.render.math.Vector3f(0,1,0));
-        this.setPhys(true);
+        this.setPhys(true);*/
+
+        this.setMaterials((HashMap<String, Material>) mRes[1]);
 
         CollisionShape ballShape = new BoxShape(new Vector3f(2.0f, 2.0f, 2.0f));
         MotionState ballMotionState = new DefaultMotionState(DEFAULT_BALL_TRANSFORM);
@@ -43,5 +45,6 @@ public class CharacterObject extends RenderObject {
         this.setObjName("Chara");
         this.setRigidBody(true);
         this.getRigidBodyShape().setFriction(this.getRigidBodyShape().getFriction() + 1f);
+        ;
     }
 }
