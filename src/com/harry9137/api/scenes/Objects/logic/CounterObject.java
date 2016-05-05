@@ -1,10 +1,11 @@
 package com.harry9137.api.scenes.Objects.logic;
 
 import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.UnicodeFont;
 
 public class CounterObject extends TextObject {
     public int number;
-    public CounterObject(TrueTypeFont font, String string, int x, int y, int startNum){
+    public CounterObject(UnicodeFont font, String string, int x, int y, int startNum){
         super(font, string, x, y);
         number = startNum;
 

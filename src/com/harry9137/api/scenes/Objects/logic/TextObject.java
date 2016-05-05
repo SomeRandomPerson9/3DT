@@ -1,9 +1,10 @@
 package com.harry9137.api.scenes.Objects.logic;
 
 import org.newdawn.slick.TrueTypeFont;
+import org.newdawn.slick.UnicodeFont;
 
 public class TextObject extends GenericObject {
-    private TrueTypeFont font;
+    private UnicodeFont font;
     String string;
 
     String objName;
@@ -14,7 +15,7 @@ public class TextObject extends GenericObject {
         this.string = string;
     }
 
-    public TextObject(TrueTypeFont updatedFont, String string){
+    public TextObject(UnicodeFont updatedFont, String string){
         this.string = string;
         font = updatedFont;
     }
@@ -25,18 +26,18 @@ public class TextObject extends GenericObject {
         y = updatedY;
     }
 
-    public TextObject(TrueTypeFont updatedFont, String string, int updatedX, int updatedY){
+    public TextObject(UnicodeFont updatedFont, String string, int updatedX, int updatedY){
         this.string = string;
         x = updatedX;
         y = updatedY;
         font = updatedFont;
     }
 
-    public TextObject(TrueTypeFont updatedFont){
+    public TextObject(UnicodeFont updatedFont){
         font = updatedFont;
     }
 
-    public TextObject(TrueTypeFont updatedFont, int updatedX, int updatedY){
+    public TextObject(UnicodeFont updatedFont, int updatedX, int updatedY){
         font = updatedFont;
         x = updatedX;
         y = updatedY;
@@ -78,11 +79,11 @@ public class TextObject extends GenericObject {
         this.string = string;
     }
 
-    public TrueTypeFont getFont() {
+    public UnicodeFont getFont() {
         return font;
     }
 
-    public void setFont(TrueTypeFont font) {
+    public void setFont(UnicodeFont font) {
         this.font = font;
     }
 

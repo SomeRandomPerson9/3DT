@@ -1,6 +1,6 @@
 package com.harry9137.api.scenes;
 
-import com.bulletphysics.linearmath.Transform;
+import com.harry9137.api.render.Transform;
 import com.harry9137.api.main.Game;
 import com.harry9137.api.physics.MathHelper;
 import com.harry9137.api.render.Material;
@@ -13,7 +13,7 @@ import com.harry9137.api.scenes.Objects.logic.RenderObject;
 import com.harry9137.api.scenes.Objects.logic.TextObject;
 import com.harry9137.api.util.ProgramRefrence;
 import com.harry9137.api.util.RenderUtil;
-import org.lwjgl.opengl.GL11;
+import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.glu.GLU;
 import org.lwjgl.util.glu.Sphere;
 import org.newdawn.slick.Color;
@@ -43,11 +43,11 @@ public class SceneLoader {
             selectedScene.update();
             if(selectedScene.getDynamicsWorld() != null) {
                 //System.out.println("blah");
-                GL11.glLoadIdentity();
+                glLoadIdentity();
                 selectedScene.getDynamicsWorld().stepSimulation(1.0f / 60.0f);
                 for(RenderObject renderObject : selectedScene.getObjects()){
                     if (renderObject.isPhys()) {
-                        renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin));
+                        renderObject.setLocation(MathHelper.vecMathToBaked3f(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new com.bulletphysics.linearmath.Transform()).origin));
                         //System.out.println(renderObject.getRigidBodyShape().getMotionState().getWorldTransform(new Transform()).origin);
                     }
                 }
@@ -67,6 +67,9 @@ public class SceneLoader {
     }
     public static void renderScene(){
         if(selectedScene.sceneType == SceneType.THREE_DIMENSIONAL) {
+
+            RenderUtil.make3D();
+
             for (RenderObject renderObject : selectedScene.getObjects()) {
                 /*if(renderObject.isHeld()) {
                         Object[] temp = (renderObject.getTransform().getProjectedTransformationHeld(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())));
@@ -86,6 +89,7 @@ public class SceneLoader {
                     //System.out.println("Stuf + Tjomgs: " + renderObject.getMaterials());
                     selectedScene.getRegShader().updateUniforms(renderObject.getTransform().getTransformation(), renderObject.getTransform().getProjectedTransformation(new Matrix4f().initTranslation(renderObject.getLocation().GetX(), renderObject.getLocation().GetY(), renderObject.getLocation().GetZ())), renderObject.getMaterial(meshyThing.getRequiredMtl()));
                     meshyThing.draw();
+                    glLoadIdentity();
                 }
 
                 //renderObject.getMesh().draw();
@@ -99,15 +103,22 @@ public class SceneLoader {
                     GL11.glPopMatrix();
                 */
             }
+
+            glMatrixMode(GL_PROJECTION);
+            glLoadMatrix(selectedScene.getOrthographicProjectionMatrix());
+            glMatrixMode(GL_MODELVIEW);
+
             for(GenericObject genericObject : selectedScene.getOverlayObjects()){
-                /*if(genericObject instanceof TextObject){
+                if(genericObject instanceof TextObject){
                     TextObject textObj = (TextObject)genericObject;
                     try {
-                        GL11.glPushMatrix();
-                        selectedScene.getOverlayShader().bind();
-                        selectedScene.getOverlayShader().updateUniforms(null, null, new Material(null, new Vector3f(0,0,0)));
-                        ProgramRefrence.fonts.arialFont.drawString(textObj.getX(), textObj.getY(), textObj.getString(), Color.black);
-                        GL11.glPopMatrix();
+                        glPushMatrix();
+                        glLoadIdentity();
+                        //glDisable(GL_LIGHTING);
+                        ProgramRefrence.fonts.arialFont.drawString(10, 10, "EulerCamera: [x=" + ProgramRefrence.formatters.hundredths.format(selectedScene.getCamera().getPos().GetX()) +
+                                ",y=" + ProgramRefrence.formatters.hundredths.format(selectedScene.getCamera().getPos().GetY()) + ",z=" + ProgramRefrence.formatters.hundredths.format(selectedScene.getCamera().getPos().GetZ()) + "]");
+                        //glEnable(GL_LIGHTING);
+                        glPopMatrix();
                     }catch(NullPointerException e){
                         if(ProgramRefrence.fonts.arialFont == null){ 
                             System.err.println("Global font is null");
@@ -124,13 +135,18 @@ public class SceneLoader {
                     ChoiceMenuObject choiceMenuObject = (ChoiceMenuObject)genericObject;
 
                     try{
-                        choiceMenuObject.mesh.draw(choiceMenuObject.xPos, choiceMenuObject.yPos);
+                        //choiceMenuObject.mesh.draw(choiceMenuObject.xPos, choiceMenuObject.yPos);
                     }
                     catch(Exception e){
 
                     }
-                }*/
+                }
             }
+
+            //glMatrixMode(GL_PROJECTION);
+            //glLoadMatrix(selectedScene.getPerspectiveProjectionMatrix());
+            //glMatrixMode(GL_MODELVIEW);
+
         }
         else if(selectedScene.sceneType == SceneType.TWO_DIMENSIONAL){
             if(selectedScene instanceof Scene2DVideo){

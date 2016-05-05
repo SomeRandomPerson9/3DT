@@ -21,6 +21,7 @@ public class Launch {
 
     public Launch(){
         System.out.println(RenderUtil.getOpenGLVersion());
+        ProgramRefrence.init();
         RenderUtil.initGraphics();
         isRunning = false;
         game = Game.getInstance();

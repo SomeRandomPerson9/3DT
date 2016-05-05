@@ -16,8 +16,12 @@ import com.harry9137.api.render.Transform;
 import com.harry9137.api.render.Window;
 import com.harry9137.api.scenes.Objects.logic.GenericObject;
 import com.harry9137.api.scenes.Objects.logic.RenderObject;
+import com.harry9137.api.util.RenderUtil;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.GL11;
 
 import javax.vecmath.Vector3f;
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
 public class SceneBase {
@@ -31,6 +35,9 @@ public class SceneBase {
     private Transform transform;
     private int btsUpdateLvl = 0;
     protected SceneType sceneType;
+
+    private FloatBuffer perspectiveProjectionMatrix = RenderUtil.reserveData(16);
+    private FloatBuffer orthographicProjectionMatrix = RenderUtil.reserveData(16);
 
     // TEST
     private EulerCamera eulerCamera = new EulerCamera.Builder()
@@ -106,6 +113,15 @@ public class SceneBase {
 
     public void setCamera(Camera camera) {
         this.camera = camera;
+        this.getCamera().applyPerspectiveMatrix();
+        GL11.glGetFloat(GL11.GL_PROJECTION_MATRIX, perspectiveProjectionMatrix);
+        GL11.glMatrixMode(GL11.GL_PROJECTION);
+        GL11.glLoadIdentity();
+        GL11.glOrtho(0, Display.getWidth(), Display.getHeight(), 0, 1, -1);
+        GL11.glGetFloat(GL11.GL_PROJECTION_MATRIX, orthographicProjectionMatrix);
+        GL11.glLoadMatrix(perspectiveProjectionMatrix);
+        GL11.glMatrixMode(GL11.GL_MODELVIEW_MATRIX);
+
     }
 
     public Transform getTransform() {
@@ -185,5 +201,21 @@ public class SceneBase {
 
     public void setDynamicsWorld(DynamicsWorld dynamicsWorld) {
         this.dynamicsWorld = dynamicsWorld;
+    }
+
+    public FloatBuffer getOrthographicProjectionMatrix() {
+        return orthographicProjectionMatrix;
+    }
+
+    public void setOrthographicProjectionMatrix(FloatBuffer orthographicProjectionMatrix) {
+        this.orthographicProjectionMatrix = orthographicProjectionMatrix;
+    }
+
+    public FloatBuffer getPerspectiveProjectionMatrix() {
+        return perspectiveProjectionMatrix;
+    }
+
+    public void setPerspectiveProjectionMatrix(FloatBuffer perspectiveProjectionMatrix) {
+        this.perspectiveProjectionMatrix = perspectiveProjectionMatrix;
     }
 }

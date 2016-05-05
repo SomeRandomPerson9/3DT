@@ -12,9 +12,11 @@ import com.harry9137.api.render.shaders.OverlayShader;
 import com.harry9137.api.render.shaders.PhongShader;
 import com.harry9137.api.scenes.Objects.CharacterObject;
 import com.harry9137.api.scenes.Objects.GroundObject;
+import com.harry9137.api.scenes.Objects.logic.TextObject;
 import com.harry9137.api.scenes.SceneBase;
 import com.harry9137.api.scenes.SceneType;
 import com.harry9137.api.util.ObjBuilder;
+import com.harry9137.api.util.ProgramRefrence;
 
 public class SceneTitleScreen extends SceneBase {
     public SceneTitleScreen(){
@@ -35,9 +37,13 @@ public class SceneTitleScreen extends SceneBase {
         this.addObject(ObjBuilder.build(this.getTransform(), "TitleRoom.obj", "TitleRoom"));
 
         this.addObject(new CharacterObject(this.getTransform()));
-        this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(new com.bulletphysics.linearmath.Transform()).origin.y += 14;
+        com.bulletphysics.linearmath.Transform tr = this.getObject("Chara").getRigidBodyShape().getMotionState().getWorldTransform(new com.bulletphysics.linearmath.Transform());
+        tr.transform(new javax.vecmath.Vector3f(0,14f,0));
+        this.getObject("Chara").getRigidBodyShape().setWorldTransform(tr);
 
         this.addObject(new GroundObject(this.getTransform()));
+
+        this.addOverlay(new TextObject(ProgramRefrence.fonts.arialFont, "Dang Son, where'd ya find this?", 0, 0));
     }
 
     @Override

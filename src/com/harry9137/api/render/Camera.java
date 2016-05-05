@@ -4,6 +4,8 @@ import com.harry9137.api.main.Input;
 import com.harry9137.api.util.Time;
 import com.harry9137.api.render.math.Vector2f;
 import com.harry9137.api.render.math.Vector3f;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.glu.GLU;
 
 public class Camera
 {
@@ -105,6 +107,14 @@ public class Camera
         forward = forward.Rotate(Haxis, angle).Normalized();
 
         up = forward.cross(Haxis).Normalized();
+    }
+
+    public void applyPerspectiveMatrix() {
+        GL11.glPushAttrib(GL11.GL_TRANSFORM_BIT);
+        GL11.glMatrixMode(GL11.GL_PROJECTION);
+        GL11.glLoadIdentity();
+        GLU.gluPerspective(70f, Window.getWidth()/Window.getHeight(), 0.1f, 110f);
+        GL11.glPopAttrib();
     }
 
     public Vector3f getLeft()

@@ -14,5 +14,6 @@
     <orderEntry type="library" exported="" name="javadoc" level="project" />
     <orderEntry type="library" exported="" name="lwjgl_util" level="project" />
     <orderEntry type="library" name="jbullet" level="project" />
+    <orderEntry type="library" name="slick" level="project" />
   </component>
 </module>

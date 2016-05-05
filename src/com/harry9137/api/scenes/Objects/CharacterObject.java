@@ -36,7 +36,7 @@ public class CharacterObject extends RenderObject {
 
         this.setMaterials((HashMap<String, Material>) mRes[1]);
 
-        CollisionShape ballShape = new BoxShape(new Vector3f(2.0f, 2.0f, 2.0f));
+        CollisionShape ballShape = new BoxShape(new Vector3f(1.0f, 1.0f, 1.0f));
         MotionState ballMotionState = new DefaultMotionState(DEFAULT_BALL_TRANSFORM);
         Vector3f ballInertia = new Vector3f(0, 0, 0);
         ballShape.calculateLocalInertia(2.5f, ballInertia);
